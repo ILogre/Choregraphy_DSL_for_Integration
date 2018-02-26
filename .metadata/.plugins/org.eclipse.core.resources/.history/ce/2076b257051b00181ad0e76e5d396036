@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Choregraphy_DSL_for_Integration/src" modelPluginID="Choregraphy_DSL_for_Integration"
+    modelName="Choregraphy_DSL_for_Integration" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>choregraphy_DSL_for_Integration.ecore</foreignModel>
+  <genPackages prefix="Choregraphy_DSL_for_Integration" disposableProviderFactory="true"
+      ecorePackage="choregraphy_DSL_for_Integration.ecore#/"/>
+</genmodel:GenModel>
