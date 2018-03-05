@@ -31,9 +31,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute choregraphyDSL4integration.ecore#//FlowElement/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference choregraphyDSL4integration.ecore#//FlowElement/scenarioFlow"/>
     </genClasses>
-    <genClasses ecoreClass="choregraphyDSL4integration.ecore#//SequenceRelation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference choregraphyDSL4integration.ecore#//SequenceRelation/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference choregraphyDSL4integration.ecore#//SequenceRelation/source"/>
+    <genClasses ecoreClass="choregraphyDSL4integration.ecore#//SequenceFlow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference choregraphyDSL4integration.ecore#//SequenceFlow/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference choregraphyDSL4integration.ecore#//SequenceFlow/source"/>
     </genClasses>
     <genClasses ecoreClass="choregraphyDSL4integration.ecore#//FlowNode">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference choregraphyDSL4integration.ecore#//FlowNode/incomings"/>

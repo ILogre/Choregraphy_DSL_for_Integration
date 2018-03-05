@@ -35,7 +35,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenarioFlow" lowerBound="1"
         eType="#//ScenarioFlow" eOpposite="#//ScenarioFlow/flowElements"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SequenceRelation" eSuperTypes="#//FlowElement">
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceFlow" eSuperTypes="#//FlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//FlowNode" eOpposite="#//FlowNode/incomings"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -43,9 +43,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FlowNode" abstract="true" eSuperTypes="#//FlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomings" upperBound="-1"
-        eType="#//SequenceRelation" eOpposite="#//SequenceRelation/target"/>
+        eType="#//SequenceFlow" eOpposite="#//SequenceFlow/target"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoings" upperBound="-1"
-        eType="#//SequenceRelation" eOpposite="#//SequenceRelation/source"/>
+        eType="#//SequenceFlow" eOpposite="#//SequenceFlow/source"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="#//FlowNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="Stop" eSuperTypes="#//Event"/>
