@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="chormetamodel" nsURI="http://www.chor4integration.com/chormetamodel"
+    nsPrefix="chormetamodel">
+  <eClassifiers xsi:type="ecore:EClass" name="Choreography">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowElements" upperBound="-1"
+        eType="#//FlowElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowNode" abstract="true" eSuperTypes="#//FlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomings" upperBound="-1"
+        eType="#//SequenceFlow" eOpposite="#//SequenceFlow/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoings" upperBound="-1"
+        eType="#//SequenceFlow" eOpposite="#//SequenceFlow/source"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceFlow" eSuperTypes="#//FlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//FlowNode" eOpposite="#//FlowNode/incomings"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//FlowNode" eOpposite="#//FlowNode/outgoings"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gateway" abstract="true" eSuperTypes="#//FlowNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExclusiveGateway" eSuperTypes="#//Gateway"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParallelGateway" eSuperTypes="#//Gateway"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="#//FlowNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StartEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interaction" abstract="true" eSuperTypes="#//FlowNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sender" lowerBound="1"
+        eType="ecore:EClass ../../com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore#//Role"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" lowerBound="1"
+        eType="ecore:EClass ../../com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore#//Role"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicInteraction" eSuperTypes="#//Interaction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetOperation" eType="ecore:EClass ../../com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore#//Operation"/>
+  </eClassifiers>
+</ecore:EPackage>

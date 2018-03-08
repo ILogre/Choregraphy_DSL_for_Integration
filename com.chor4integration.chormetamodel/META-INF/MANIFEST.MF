@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.chor4integration.chormetamodel;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.chor4integration.chormetamodel,
+ com.chor4integration.chormetamodel.impl,
+ com.chor4integration.chormetamodel.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ com.chor4integration.servicesmetamodel;visibility:=reexport,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy

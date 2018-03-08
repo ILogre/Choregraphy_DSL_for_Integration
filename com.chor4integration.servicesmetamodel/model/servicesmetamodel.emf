@@ -1,0 +1,34 @@
+@namespace(uri="http://www.chor4integration.com/servicesmetamodel", prefix="servicesmetamodel")
+package servicesmetamodel;
+
+class Role {
+  attr String[1] name;
+  ref Actor implementation;
+}
+
+class Service extends Actor {
+  val Operation[*] operations;
+}
+
+class StructuralView {
+  val Role[*] roles;
+}
+
+class Operation {
+  attr String[1] name;
+  attr EJavaObject args;
+  attr boolean[1] sideEffect = true;
+  ref Message[1] invokingMsg;
+  ref Message answeringMsg;
+}
+
+class Message {
+  attr EJavaObject content;
+}
+
+class User extends Actor {
+}
+
+abstract class Actor {
+  attr String name;
+}

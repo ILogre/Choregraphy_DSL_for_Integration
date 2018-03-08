@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="servicesmetamodel" nsURI="http://www.chor4integration.com/servicesmetamodel"
+    nsPrefix="servicesmetamodel">
+  <eClassifiers xsi:type="ecore:EClass" name="Role">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//Actor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//Actor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+        eType="#//Operation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuralView">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="#//Role" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="args" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sideEffect" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invokingMsg" lowerBound="1"
+        eType="#//Message"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="answeringMsg" eType="#//Message"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//Actor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

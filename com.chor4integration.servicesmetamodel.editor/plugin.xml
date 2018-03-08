@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated servicesmetamodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.chor4integration.servicesmetamodel.presentation.ServicesmetamodelModelWizardID"
+            name="%_UI_ServicesmetamodelModelWizard_label"
+            class="com.chor4integration.servicesmetamodel.presentation.ServicesmetamodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ServicesmetamodelModelFile.gif">
+         <description>%_UI_ServicesmetamodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated servicesmetamodel -->
+      <editor
+            id="com.chor4integration.servicesmetamodel.presentation.ServicesmetamodelEditorID"
+            name="%_UI_ServicesmetamodelEditor_label"
+            icon="icons/full/obj16/ServicesmetamodelModelFile.gif"
+            extensions="servicesmetamodel"
+            class="com.chor4integration.servicesmetamodel.presentation.ServicesmetamodelEditor"
+            contributorClass="com.chor4integration.servicesmetamodel.presentation.ServicesmetamodelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

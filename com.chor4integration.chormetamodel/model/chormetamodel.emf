@@ -1,0 +1,59 @@
+@namespace(uri="http://www.chor4integration.com/chormetamodel", prefix="chormetamodel")
+package chormetamodel;
+
+import "http://www.eclipse.org/emf/2003/XMLType";
+import "platform:/resource/com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore";
+
+
+class Choreography {
+  val FlowElement[*] flowElements;
+}
+
+abstract class FlowElement {
+  attr String name;
+}
+
+abstract class FlowNode extends FlowElement {
+  ref SequenceFlow[*]#target incomings;
+  ref SequenceFlow[*]#source outgoings;
+}
+
+class SequenceFlow extends FlowElement{
+	ref FlowNode[1]#incomings target;
+	ref FlowNode[1]#outgoings source;
+}
+
+abstract class Gateway extends FlowNode {
+	
+}
+
+class ExclusiveGateway extends Gateway{
+	
+}
+
+class ParallelGateway extends Gateway{
+	
+}
+
+abstract class Event extends FlowNode{
+	
+}
+
+class StartEvent extends Event{
+	
+}
+
+class EndEvent extends Event{
+	
+}
+
+
+abstract class Interaction extends FlowNode {
+  ref servicesmetamodel.Role[1] sender;
+  ref servicesmetamodel.Role[1] receiver;
+}
+
+class AtomicInteraction extends Interaction {
+  ref servicesmetamodel.Operation[?] targetOperation;
+}
+
