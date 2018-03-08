@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/chor4integration/src-gen" creationIcons="false"
+    editDirectory="/chor4integration.edit/src-gen" editorDirectory="/chor4integration.editor/src-gen"
+    modelPluginID="chor4integration" modelName="Chor4integration" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>chor4integration.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Chor4integration" disposableProviderFactory="true" ecorePackage="chor4integration.ecore#/">
+    <genClasses ecoreClass="chor4integration.ecore#//ScenarioFlow">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference chor4integration.ecore#//ScenarioFlow/flowelements"/>
+    </genClasses>
+    <genClasses ecoreClass="chor4integration.ecore#//FlowElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chor4integration.ecore#//FlowElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="chor4integration.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chor4integration.ecore#//Message/content"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
