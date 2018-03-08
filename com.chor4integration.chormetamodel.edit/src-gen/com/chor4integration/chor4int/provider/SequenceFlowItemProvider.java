@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.provider;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.SequenceFlow;
 
 import java.util.Collection;
@@ -60,7 +60,7 @@ public class SequenceFlowItemProvider extends FlowElementItemProvider {
 						getResourceLocator(), getString("_UI_SequenceFlow_target_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_SequenceFlow_target_feature",
 								"_UI_SequenceFlow_type"),
-						ChormetamodelPackage.Literals.SEQUENCE_FLOW__TARGET, true, false, true, null, null, null));
+						Chor4intPackage.Literals.SEQUENCE_FLOW__TARGET, true, false, true, null, null, null));
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class SequenceFlowItemProvider extends FlowElementItemProvider {
 						getResourceLocator(), getString("_UI_SequenceFlow_source_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_SequenceFlow_source_feature",
 								"_UI_SequenceFlow_type"),
-						ChormetamodelPackage.Literals.SEQUENCE_FLOW__SOURCE, true, false, true, null, null, null));
+						Chor4intPackage.Literals.SEQUENCE_FLOW__SOURCE, true, false, true, null, null, null));
 	}
 
 	/**

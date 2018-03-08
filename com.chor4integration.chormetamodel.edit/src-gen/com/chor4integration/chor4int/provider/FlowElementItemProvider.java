@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.provider;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.FlowElement;
 
 import java.util.Collection;
@@ -70,7 +70,7 @@ public class FlowElementItemProvider extends ItemProviderAdapter implements IEdi
 						getResourceLocator(), getString("_UI_FlowElement_name_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_FlowElement_name_feature",
 								"_UI_FlowElement_type"),
-						ChormetamodelPackage.Literals.FLOW_ELEMENT__NAME, true, false, false,
+						Chor4intPackage.Literals.FLOW_ELEMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -109,7 +109,7 @@ public class FlowElementItemProvider extends ItemProviderAdapter implements IEdi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FlowElement.class)) {
-		case ChormetamodelPackage.FLOW_ELEMENT__NAME:
+		case Chor4intPackage.FLOW_ELEMENT__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -136,7 +136,7 @@ public class FlowElementItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ChormetamodelEditPlugin.INSTANCE;
+		return chor4intEditPlugin.INSTANCE;
 	}
 
 }

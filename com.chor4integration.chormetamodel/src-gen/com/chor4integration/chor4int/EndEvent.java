@@ -8,7 +8,7 @@ package com.chor4integration.chor4int;
  * <!-- end-user-doc -->
  *
  *
- * @see com.chor4integration.chor4int.ChormetamodelPackage#getEndEvent()
+ * @see com.chor4integration.chor4int.Chor4intPackage#getEndEvent()
  * @model
  * @generated
  */

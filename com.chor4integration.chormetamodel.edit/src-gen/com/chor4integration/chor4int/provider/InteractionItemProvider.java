@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.provider;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.Interaction;
 
 import java.util.Collection;
@@ -60,7 +60,7 @@ public class InteractionItemProvider extends FlowNodeItemProvider {
 						getResourceLocator(), getString("_UI_Interaction_sender_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Interaction_sender_feature",
 								"_UI_Interaction_type"),
-						ChormetamodelPackage.Literals.INTERACTION__SENDER, true, false, true, null, null, null));
+						Chor4intPackage.Literals.INTERACTION__SENDER, true, false, true, null, null, null));
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class InteractionItemProvider extends FlowNodeItemProvider {
 						getResourceLocator(), getString("_UI_Interaction_receiver_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Interaction_receiver_feature",
 								"_UI_Interaction_type"),
-						ChormetamodelPackage.Literals.INTERACTION__RECEIVER, true, false, true, null, null, null));
+						Chor4intPackage.Literals.INTERACTION__RECEIVER, true, false, true, null, null, null));
 	}
 
 	/**

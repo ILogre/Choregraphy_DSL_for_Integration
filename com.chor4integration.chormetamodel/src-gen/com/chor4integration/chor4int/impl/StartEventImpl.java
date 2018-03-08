@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.impl;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.StartEvent;
 
 import org.eclipse.emf.ecore.EClass;
@@ -31,7 +31,7 @@ public class StartEventImpl extends EventImpl implements StartEvent {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ChormetamodelPackage.Literals.START_EVENT;
+		return Chor4intPackage.Literals.START_EVENT;
 	}
 
 } //StartEventImpl

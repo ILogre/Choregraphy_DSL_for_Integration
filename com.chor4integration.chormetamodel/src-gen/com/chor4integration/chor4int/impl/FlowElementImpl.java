@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.impl;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.FlowElement;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -62,7 +62,7 @@ public abstract class FlowElementImpl extends MinimalEObjectImpl.Container imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ChormetamodelPackage.Literals.FLOW_ELEMENT;
+		return Chor4intPackage.Literals.FLOW_ELEMENT;
 	}
 
 	/**
@@ -83,8 +83,7 @@ public abstract class FlowElementImpl extends MinimalEObjectImpl.Container imple
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ChormetamodelPackage.FLOW_ELEMENT__NAME, oldName,
-					name));
+			eNotify(new ENotificationImpl(this, Notification.SET, Chor4intPackage.FLOW_ELEMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -95,7 +94,7 @@ public abstract class FlowElementImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_ELEMENT__NAME:
+		case Chor4intPackage.FLOW_ELEMENT__NAME:
 			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -109,7 +108,7 @@ public abstract class FlowElementImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_ELEMENT__NAME:
+		case Chor4intPackage.FLOW_ELEMENT__NAME:
 			setName((String) newValue);
 			return;
 		}
@@ -124,7 +123,7 @@ public abstract class FlowElementImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_ELEMENT__NAME:
+		case Chor4intPackage.FLOW_ELEMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
 		}
@@ -139,7 +138,7 @@ public abstract class FlowElementImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_ELEMENT__NAME:
+		case Chor4intPackage.FLOW_ELEMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);

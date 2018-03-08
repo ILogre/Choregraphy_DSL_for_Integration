@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:chor4int="http://www.chor4integration.com/chormetamodel" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
+  <viewpoint:DAnalysis xmi:id="_AyrQACLmEeizs50wib5JQA" selectedViews="_KdjH8CLoEeiACeshZZdcwg" version="12.1.0.201708031200">
+    <semanticResources>models/test.chor4int</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_KdjH8CLoEeiACeshZZdcwg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/com.chor4integration.design.graphicaldsl/description/chor4int.odesign#//@ownedViewpoints[name='chor4int']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_WoZUMCLoEeiACeshZZdcwg" name="Scenario" repPath="#_Wnul0CLoEeiACeshZZdcwg">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/com.chor4integration.design.graphicaldsl/description/chor4int.odesign#//@ownedViewpoints[name='chor4int']/@ownedRepresentations[name='Scenario']"/>
+        <target xmi:type="chor4int:Choreography" href="models/test.chor4int#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_WoT0oCLoEeiACeshZZdcwg" name="Scenario" uid="_Wnul0CLoEeiACeshZZdcwg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_WoVCwCLoEeiACeshZZdcwg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_WoVp0CLoEeiACeshZZdcwg"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_Wo2nMCLoEeiACeshZZdcwg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_Wo2nMSLoEeiACeshZZdcwg" type="Sirius" element="_WoT0oCLoEeiACeshZZdcwg" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_Wo2nMiLoEeiACeshZZdcwg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/com.chor4integration.design.graphicaldsl/description/chor4int.odesign#//@ownedViewpoints[name='chor4int']/@ownedRepresentations[name='Scenario']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_WoVp0iLoEeiACeshZZdcwg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/com.chor4integration.design.graphicaldsl/description/chor4int.odesign#//@ownedViewpoints[name='chor4int']/@ownedRepresentations[name='Scenario']/@defaultLayer"/>
+    <target xmi:type="chor4int:Choreography" href="models/test.chor4int#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

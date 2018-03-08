@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.impl;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.Event;
 
 import org.eclipse.emf.ecore.EClass;
@@ -31,7 +31,7 @@ public abstract class EventImpl extends FlowNodeImpl implements Event {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ChormetamodelPackage.Literals.EVENT;
+		return Chor4intPackage.Literals.EVENT;
 	}
 
 } //EventImpl

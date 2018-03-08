@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.chor4integration.chor4int.Choreography#getFlowElements <em>Flow Elements</em>}</li>
  * </ul>
  *
- * @see com.chor4integration.chor4int.ChormetamodelPackage#getChoreography()
+ * @see com.chor4integration.chor4int.Chor4intPackage#getChoreography()
  * @model
  * @generated
  */
@@ -33,7 +33,7 @@ public interface Choreography extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Flow Elements</em>' containment reference list.
-	 * @see com.chor4integration.chor4int.ChormetamodelPackage#getChoreography_FlowElements()
+	 * @see com.chor4integration.chor4int.Chor4intPackage#getChoreography_FlowElements()
 	 * @model containment="true"
 	 * @generated
 	 */

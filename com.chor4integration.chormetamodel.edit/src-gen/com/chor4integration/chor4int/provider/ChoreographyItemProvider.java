@@ -2,9 +2,9 @@
  */
 package com.chor4integration.chor4int.provider;
 
+import com.chor4integration.chor4int.Chor4intFactory;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.Choreography;
-import com.chor4integration.chor4int.ChormetamodelFactory;
-import com.chor4integration.chor4int.ChormetamodelPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -70,7 +70,7 @@ public class ChoreographyItemProvider extends ItemProviderAdapter implements IEd
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ChormetamodelPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS);
+			childrenFeatures.add(Chor4intPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -132,7 +132,7 @@ public class ChoreographyItemProvider extends ItemProviderAdapter implements IEd
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Choreography.class)) {
-		case ChormetamodelPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
+		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -150,23 +150,23 @@ public class ChoreographyItemProvider extends ItemProviderAdapter implements IEd
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ChormetamodelPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
-				ChormetamodelFactory.eINSTANCE.createSequenceFlow()));
+		newChildDescriptors.add(createChildParameter(Chor4intPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
+				Chor4intFactory.eINSTANCE.createSequenceFlow()));
 
-		newChildDescriptors.add(createChildParameter(ChormetamodelPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
-				ChormetamodelFactory.eINSTANCE.createExclusiveGateway()));
+		newChildDescriptors.add(createChildParameter(Chor4intPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
+				Chor4intFactory.eINSTANCE.createExclusiveGateway()));
 
-		newChildDescriptors.add(createChildParameter(ChormetamodelPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
-				ChormetamodelFactory.eINSTANCE.createParallelGateway()));
+		newChildDescriptors.add(createChildParameter(Chor4intPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
+				Chor4intFactory.eINSTANCE.createParallelGateway()));
 
-		newChildDescriptors.add(createChildParameter(ChormetamodelPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
-				ChormetamodelFactory.eINSTANCE.createStartEvent()));
+		newChildDescriptors.add(createChildParameter(Chor4intPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
+				Chor4intFactory.eINSTANCE.createStartEvent()));
 
-		newChildDescriptors.add(createChildParameter(ChormetamodelPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
-				ChormetamodelFactory.eINSTANCE.createEndEvent()));
+		newChildDescriptors.add(createChildParameter(Chor4intPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
+				Chor4intFactory.eINSTANCE.createEndEvent()));
 
-		newChildDescriptors.add(createChildParameter(ChormetamodelPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
-				ChormetamodelFactory.eINSTANCE.createAtomicInteraction()));
+		newChildDescriptors.add(createChildParameter(Chor4intPackage.Literals.CHOREOGRAPHY__FLOW_ELEMENTS,
+				Chor4intFactory.eINSTANCE.createAtomicInteraction()));
 	}
 
 	/**
@@ -177,7 +177,7 @@ public class ChoreographyItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ChormetamodelEditPlugin.INSTANCE;
+		return chor4intEditPlugin.INSTANCE;
 	}
 
 }

@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.provider;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.FlowNode;
 
 import java.util.Collection;
@@ -60,7 +60,7 @@ public class FlowNodeItemProvider extends FlowElementItemProvider {
 						getResourceLocator(), getString("_UI_FlowNode_incomings_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_FlowNode_incomings_feature",
 								"_UI_FlowNode_type"),
-						ChormetamodelPackage.Literals.FLOW_NODE__INCOMINGS, true, false, true, null, null, null));
+						Chor4intPackage.Literals.FLOW_NODE__INCOMINGS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class FlowNodeItemProvider extends FlowElementItemProvider {
 						getResourceLocator(), getString("_UI_FlowNode_outgoings_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_FlowNode_outgoings_feature",
 								"_UI_FlowNode_type"),
-						ChormetamodelPackage.Literals.FLOW_NODE__OUTGOINGS, true, false, true, null, null, null));
+						Chor4intPackage.Literals.FLOW_NODE__OUTGOINGS, true, false, true, null, null, null));
 	}
 
 	/**

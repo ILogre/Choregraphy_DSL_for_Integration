@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.impl;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.ExclusiveGateway;
 
 import org.eclipse.emf.ecore.EClass;
@@ -31,7 +31,7 @@ public class ExclusiveGatewayImpl extends GatewayImpl implements ExclusiveGatewa
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ChormetamodelPackage.Literals.EXCLUSIVE_GATEWAY;
+		return Chor4intPackage.Literals.EXCLUSIVE_GATEWAY;
 	}
 
 } //ExclusiveGatewayImpl

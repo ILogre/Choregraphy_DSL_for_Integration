@@ -14,4 +14,12 @@
             genModel="model/chormetamodel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated chor4int -->
+      <package
+            uri="http://www.chor4integration.com/chormetamodel"
+            class="com.chor4integration.chor4int.Chor4intPackage"
+            genModel="model/chormetamodel.genmodel"/>
+   </extension>
+
 </plugin>

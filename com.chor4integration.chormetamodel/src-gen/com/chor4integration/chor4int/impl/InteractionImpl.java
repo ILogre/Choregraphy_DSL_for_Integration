@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.impl;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.Interaction;
 
 import com.chor4integration.servicesmetamodel.Role;
@@ -65,7 +65,7 @@ public abstract class InteractionImpl extends FlowNodeImpl implements Interactio
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ChormetamodelPackage.Literals.INTERACTION;
+		return Chor4intPackage.Literals.INTERACTION;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public abstract class InteractionImpl extends FlowNodeImpl implements Interactio
 			sender = (Role) eResolveProxy(oldSender);
 			if (sender != oldSender) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ChormetamodelPackage.INTERACTION__SENDER,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Chor4intPackage.INTERACTION__SENDER,
 							oldSender, sender));
 			}
 		}
@@ -104,7 +104,7 @@ public abstract class InteractionImpl extends FlowNodeImpl implements Interactio
 		Role oldSender = sender;
 		sender = newSender;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ChormetamodelPackage.INTERACTION__SENDER, oldSender,
+			eNotify(new ENotificationImpl(this, Notification.SET, Chor4intPackage.INTERACTION__SENDER, oldSender,
 					sender));
 	}
 
@@ -119,8 +119,8 @@ public abstract class InteractionImpl extends FlowNodeImpl implements Interactio
 			receiver = (Role) eResolveProxy(oldReceiver);
 			if (receiver != oldReceiver) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ChormetamodelPackage.INTERACTION__RECEIVER, oldReceiver, receiver));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Chor4intPackage.INTERACTION__RECEIVER,
+							oldReceiver, receiver));
 			}
 		}
 		return receiver;
@@ -144,8 +144,8 @@ public abstract class InteractionImpl extends FlowNodeImpl implements Interactio
 		Role oldReceiver = receiver;
 		receiver = newReceiver;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ChormetamodelPackage.INTERACTION__RECEIVER,
-					oldReceiver, receiver));
+			eNotify(new ENotificationImpl(this, Notification.SET, Chor4intPackage.INTERACTION__RECEIVER, oldReceiver,
+					receiver));
 	}
 
 	/**
@@ -156,11 +156,11 @@ public abstract class InteractionImpl extends FlowNodeImpl implements Interactio
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ChormetamodelPackage.INTERACTION__SENDER:
+		case Chor4intPackage.INTERACTION__SENDER:
 			if (resolve)
 				return getSender();
 			return basicGetSender();
-		case ChormetamodelPackage.INTERACTION__RECEIVER:
+		case Chor4intPackage.INTERACTION__RECEIVER:
 			if (resolve)
 				return getReceiver();
 			return basicGetReceiver();
@@ -176,10 +176,10 @@ public abstract class InteractionImpl extends FlowNodeImpl implements Interactio
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ChormetamodelPackage.INTERACTION__SENDER:
+		case Chor4intPackage.INTERACTION__SENDER:
 			setSender((Role) newValue);
 			return;
-		case ChormetamodelPackage.INTERACTION__RECEIVER:
+		case Chor4intPackage.INTERACTION__RECEIVER:
 			setReceiver((Role) newValue);
 			return;
 		}
@@ -194,10 +194,10 @@ public abstract class InteractionImpl extends FlowNodeImpl implements Interactio
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.INTERACTION__SENDER:
+		case Chor4intPackage.INTERACTION__SENDER:
 			setSender((Role) null);
 			return;
-		case ChormetamodelPackage.INTERACTION__RECEIVER:
+		case Chor4intPackage.INTERACTION__RECEIVER:
 			setReceiver((Role) null);
 			return;
 		}
@@ -212,9 +212,9 @@ public abstract class InteractionImpl extends FlowNodeImpl implements Interactio
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.INTERACTION__SENDER:
+		case Chor4intPackage.INTERACTION__SENDER:
 			return sender != null;
-		case ChormetamodelPackage.INTERACTION__RECEIVER:
+		case Chor4intPackage.INTERACTION__RECEIVER:
 			return receiver != null;
 		}
 		return super.eIsSet(featureID);

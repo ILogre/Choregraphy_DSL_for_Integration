@@ -15,7 +15,7 @@ package com.chor4integration.chor4int;
  *   <li>{@link com.chor4integration.chor4int.SequenceFlow#getSource <em>Source</em>}</li>
  * </ul>
  *
- * @see com.chor4integration.chor4int.ChormetamodelPackage#getSequenceFlow()
+ * @see com.chor4integration.chor4int.Chor4intPackage#getSequenceFlow()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface SequenceFlow extends FlowElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(FlowNode)
-	 * @see com.chor4integration.chor4int.ChormetamodelPackage#getSequenceFlow_Target()
+	 * @see com.chor4integration.chor4int.Chor4intPackage#getSequenceFlow_Target()
 	 * @see com.chor4integration.chor4int.FlowNode#getIncomings
 	 * @model opposite="incomings" required="true"
 	 * @generated
@@ -59,7 +59,7 @@ public interface SequenceFlow extends FlowElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(FlowNode)
-	 * @see com.chor4integration.chor4int.ChormetamodelPackage#getSequenceFlow_Source()
+	 * @see com.chor4integration.chor4int.Chor4intPackage#getSequenceFlow_Source()
 	 * @see com.chor4integration.chor4int.FlowNode#getOutgoings
 	 * @model opposite="outgoings" required="true"
 	 * @generated

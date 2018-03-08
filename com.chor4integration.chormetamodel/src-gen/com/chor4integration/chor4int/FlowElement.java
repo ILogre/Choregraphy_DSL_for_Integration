@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.chor4integration.chor4int.FlowElement#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see com.chor4integration.chor4int.ChormetamodelPackage#getFlowElement()
+ * @see com.chor4integration.chor4int.Chor4intPackage#getFlowElement()
  * @model abstract="true"
  * @generated
  */
@@ -31,7 +31,7 @@ public interface FlowElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see com.chor4integration.chor4int.ChormetamodelPackage#getFlowElement_Name()
+	 * @see com.chor4integration.chor4int.Chor4intPackage#getFlowElement_Name()
 	 * @model
 	 * @generated
 	 */

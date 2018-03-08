@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis xmi:id="_934GECLVEei7uOK3Z2_Lhw" selectedViews="_97GZMCLVEei7uOK3Z2_Lhw" version="12.1.0.201708031200">
-    <semanticResources>chormetamodel.ecore</semanticResources>
     <semanticResources>chormetamodel.genmodel</semanticResources>
     <semanticResources>platform:/resource/com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>platform:/resource/com.chor4integration.servicesmetamodel/model/servicesmetamodel.genmodel</semanticResources>
+    <semanticResources>chormetamodel.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_97GZMCLVEei7uOK3Z2_Lhw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_97roBSLVEei7uOK3Z2_Lhw" name="chormetamodel" repPath="#_97bwYCLVEei7uOK3Z2_Lhw">

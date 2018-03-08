@@ -16,7 +16,7 @@ import com.chor4integration.servicesmetamodel.Operation;
  *   <li>{@link com.chor4integration.chor4int.AtomicInteraction#getTargetOperation <em>Target Operation</em>}</li>
  * </ul>
  *
- * @see com.chor4integration.chor4int.ChormetamodelPackage#getAtomicInteraction()
+ * @see com.chor4integration.chor4int.Chor4intPackage#getAtomicInteraction()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface AtomicInteraction extends Interaction {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Operation</em>' reference.
 	 * @see #setTargetOperation(Operation)
-	 * @see com.chor4integration.chor4int.ChormetamodelPackage#getAtomicInteraction_TargetOperation()
+	 * @see com.chor4integration.chor4int.Chor4intPackage#getAtomicInteraction_TargetOperation()
 	 * @model
 	 * @generated
 	 */

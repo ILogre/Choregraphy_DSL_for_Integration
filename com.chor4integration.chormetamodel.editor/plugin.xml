@@ -7,30 +7,31 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated chormetamodel -->
+      <!-- @generated chor4int -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="com.chor4integration.chor4int.presentation.ChormetamodelModelWizardID"
-            name="%_UI_ChormetamodelModelWizard_label"
-            class="com.chor4integration.chor4int.presentation.ChormetamodelModelWizard"
+            id="com.chor4integration.chor4int.presentation.Chor4intModelWizardID"
+            name="%_UI_Chor4intModelWizard_label"
+            class="com.chor4integration.chor4int.presentation.Chor4intModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ChormetamodelModelFile.gif">
-         <description>%_UI_ChormetamodelModelWizard_description</description>
+            icon="icons/full/obj16/Chor4intModelFile.gif">
+         <description>%_UI_Chor4intModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated chormetamodel -->
+      <!-- @generated chor4int -->
       <editor
-            id="com.chor4integration.chor4int.presentation.ChormetamodelEditorID"
-            name="%_UI_ChormetamodelEditor_label"
-            icon="icons/full/obj16/ChormetamodelModelFile.gif"
-            extensions="chormetamodel"
-            class="com.chor4integration.chor4int.presentation.ChormetamodelEditor"
-            contributorClass="com.chor4integration.chor4int.presentation.ChormetamodelActionBarContributor">
+            id="com.chor4integration.chor4int.presentation.Chor4intEditorID"
+            name="%_UI_Chor4intEditor_label"
+            icon="icons/full/obj16/Chor4intModelFile.gif"
+            extensions="chor4int"
+            class="com.chor4integration.chor4int.presentation.Chor4intEditor"
+            contributorClass="com.chor4integration.chor4int.presentation.Chor4intActionBarContributor">
       </editor>
    </extension>
+
 </plugin>

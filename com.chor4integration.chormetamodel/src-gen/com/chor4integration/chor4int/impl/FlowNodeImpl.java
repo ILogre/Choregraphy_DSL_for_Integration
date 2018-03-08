@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.impl;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.FlowNode;
 import com.chor4integration.chor4int.SequenceFlow;
 
@@ -69,7 +69,7 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ChormetamodelPackage.Literals.FLOW_NODE;
+		return Chor4intPackage.Literals.FLOW_NODE;
 	}
 
 	/**
@@ -80,7 +80,7 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	public EList<SequenceFlow> getIncomings() {
 		if (incomings == null) {
 			incomings = new EObjectWithInverseResolvingEList<SequenceFlow>(SequenceFlow.class, this,
-					ChormetamodelPackage.FLOW_NODE__INCOMINGS, ChormetamodelPackage.SEQUENCE_FLOW__TARGET);
+					Chor4intPackage.FLOW_NODE__INCOMINGS, Chor4intPackage.SEQUENCE_FLOW__TARGET);
 		}
 		return incomings;
 	}
@@ -93,7 +93,7 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	public EList<SequenceFlow> getOutgoings() {
 		if (outgoings == null) {
 			outgoings = new EObjectWithInverseResolvingEList<SequenceFlow>(SequenceFlow.class, this,
-					ChormetamodelPackage.FLOW_NODE__OUTGOINGS, ChormetamodelPackage.SEQUENCE_FLOW__SOURCE);
+					Chor4intPackage.FLOW_NODE__OUTGOINGS, Chor4intPackage.SEQUENCE_FLOW__SOURCE);
 		}
 		return outgoings;
 	}
@@ -107,9 +107,9 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_NODE__INCOMINGS:
+		case Chor4intPackage.FLOW_NODE__INCOMINGS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getIncomings()).basicAdd(otherEnd, msgs);
-		case ChormetamodelPackage.FLOW_NODE__OUTGOINGS:
+		case Chor4intPackage.FLOW_NODE__OUTGOINGS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOutgoings()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -123,9 +123,9 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_NODE__INCOMINGS:
+		case Chor4intPackage.FLOW_NODE__INCOMINGS:
 			return ((InternalEList<?>) getIncomings()).basicRemove(otherEnd, msgs);
-		case ChormetamodelPackage.FLOW_NODE__OUTGOINGS:
+		case Chor4intPackage.FLOW_NODE__OUTGOINGS:
 			return ((InternalEList<?>) getOutgoings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -139,9 +139,9 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_NODE__INCOMINGS:
+		case Chor4intPackage.FLOW_NODE__INCOMINGS:
 			return getIncomings();
-		case ChormetamodelPackage.FLOW_NODE__OUTGOINGS:
+		case Chor4intPackage.FLOW_NODE__OUTGOINGS:
 			return getOutgoings();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -156,11 +156,11 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_NODE__INCOMINGS:
+		case Chor4intPackage.FLOW_NODE__INCOMINGS:
 			getIncomings().clear();
 			getIncomings().addAll((Collection<? extends SequenceFlow>) newValue);
 			return;
-		case ChormetamodelPackage.FLOW_NODE__OUTGOINGS:
+		case Chor4intPackage.FLOW_NODE__OUTGOINGS:
 			getOutgoings().clear();
 			getOutgoings().addAll((Collection<? extends SequenceFlow>) newValue);
 			return;
@@ -176,10 +176,10 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_NODE__INCOMINGS:
+		case Chor4intPackage.FLOW_NODE__INCOMINGS:
 			getIncomings().clear();
 			return;
-		case ChormetamodelPackage.FLOW_NODE__OUTGOINGS:
+		case Chor4intPackage.FLOW_NODE__OUTGOINGS:
 			getOutgoings().clear();
 			return;
 		}
@@ -194,9 +194,9 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.FLOW_NODE__INCOMINGS:
+		case Chor4intPackage.FLOW_NODE__INCOMINGS:
 			return incomings != null && !incomings.isEmpty();
-		case ChormetamodelPackage.FLOW_NODE__OUTGOINGS:
+		case Chor4intPackage.FLOW_NODE__OUTGOINGS:
 			return outgoings != null && !outgoings.isEmpty();
 		}
 		return super.eIsSet(featureID);

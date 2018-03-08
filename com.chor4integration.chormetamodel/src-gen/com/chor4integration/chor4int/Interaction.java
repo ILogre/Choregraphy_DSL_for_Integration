@@ -17,7 +17,7 @@ import com.chor4integration.servicesmetamodel.Role;
  *   <li>{@link com.chor4integration.chor4int.Interaction#getReceiver <em>Receiver</em>}</li>
  * </ul>
  *
- * @see com.chor4integration.chor4int.ChormetamodelPackage#getInteraction()
+ * @see com.chor4integration.chor4int.Chor4intPackage#getInteraction()
  * @model abstract="true"
  * @generated
  */
@@ -32,7 +32,7 @@ public interface Interaction extends FlowNode {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sender</em>' reference.
 	 * @see #setSender(Role)
-	 * @see com.chor4integration.chor4int.ChormetamodelPackage#getInteraction_Sender()
+	 * @see com.chor4integration.chor4int.Chor4intPackage#getInteraction_Sender()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface Interaction extends FlowNode {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Receiver</em>' reference.
 	 * @see #setReceiver(Role)
-	 * @see com.chor4integration.chor4int.ChormetamodelPackage#getInteraction_Receiver()
+	 * @see com.chor4integration.chor4int.Chor4intPackage#getInteraction_Receiver()
 	 * @model required="true"
 	 * @generated
 	 */

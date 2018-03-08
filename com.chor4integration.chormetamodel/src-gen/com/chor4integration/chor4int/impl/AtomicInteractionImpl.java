@@ -3,8 +3,7 @@
 package com.chor4integration.chor4int.impl;
 
 import com.chor4integration.chor4int.AtomicInteraction;
-import com.chor4integration.chor4int.ChormetamodelPackage;
-
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.servicesmetamodel.Operation;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -54,7 +53,7 @@ public class AtomicInteractionImpl extends InteractionImpl implements AtomicInte
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ChormetamodelPackage.Literals.ATOMIC_INTERACTION;
+		return Chor4intPackage.Literals.ATOMIC_INTERACTION;
 	}
 
 	/**
@@ -69,8 +68,7 @@ public class AtomicInteractionImpl extends InteractionImpl implements AtomicInte
 			if (targetOperation != oldTargetOperation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ChormetamodelPackage.ATOMIC_INTERACTION__TARGET_OPERATION, oldTargetOperation,
-							targetOperation));
+							Chor4intPackage.ATOMIC_INTERACTION__TARGET_OPERATION, oldTargetOperation, targetOperation));
 			}
 		}
 		return targetOperation;
@@ -94,8 +92,8 @@ public class AtomicInteractionImpl extends InteractionImpl implements AtomicInte
 		Operation oldTargetOperation = targetOperation;
 		targetOperation = newTargetOperation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ChormetamodelPackage.ATOMIC_INTERACTION__TARGET_OPERATION, oldTargetOperation, targetOperation));
+			eNotify(new ENotificationImpl(this, Notification.SET, Chor4intPackage.ATOMIC_INTERACTION__TARGET_OPERATION,
+					oldTargetOperation, targetOperation));
 	}
 
 	/**
@@ -106,7 +104,7 @@ public class AtomicInteractionImpl extends InteractionImpl implements AtomicInte
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ChormetamodelPackage.ATOMIC_INTERACTION__TARGET_OPERATION:
+		case Chor4intPackage.ATOMIC_INTERACTION__TARGET_OPERATION:
 			if (resolve)
 				return getTargetOperation();
 			return basicGetTargetOperation();
@@ -122,7 +120,7 @@ public class AtomicInteractionImpl extends InteractionImpl implements AtomicInte
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ChormetamodelPackage.ATOMIC_INTERACTION__TARGET_OPERATION:
+		case Chor4intPackage.ATOMIC_INTERACTION__TARGET_OPERATION:
 			setTargetOperation((Operation) newValue);
 			return;
 		}
@@ -137,7 +135,7 @@ public class AtomicInteractionImpl extends InteractionImpl implements AtomicInte
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.ATOMIC_INTERACTION__TARGET_OPERATION:
+		case Chor4intPackage.ATOMIC_INTERACTION__TARGET_OPERATION:
 			setTargetOperation((Operation) null);
 			return;
 		}
@@ -152,7 +150,7 @@ public class AtomicInteractionImpl extends InteractionImpl implements AtomicInte
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.ATOMIC_INTERACTION__TARGET_OPERATION:
+		case Chor4intPackage.ATOMIC_INTERACTION__TARGET_OPERATION:
 			return targetOperation != null;
 		}
 		return super.eIsSet(featureID);

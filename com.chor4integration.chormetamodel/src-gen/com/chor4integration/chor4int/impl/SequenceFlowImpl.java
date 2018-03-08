@@ -2,7 +2,7 @@
  */
 package com.chor4integration.chor4int.impl;
 
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.FlowNode;
 import com.chor4integration.chor4int.SequenceFlow;
 
@@ -65,7 +65,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ChormetamodelPackage.Literals.SEQUENCE_FLOW;
+		return Chor4intPackage.Literals.SEQUENCE_FLOW;
 	}
 
 	/**
@@ -79,8 +79,8 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 			target = (FlowNode) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ChormetamodelPackage.SEQUENCE_FLOW__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Chor4intPackage.SEQUENCE_FLOW__TARGET,
+							oldTarget, target));
 			}
 		}
 		return target;
@@ -105,7 +105,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 		target = newTarget;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					ChormetamodelPackage.SEQUENCE_FLOW__TARGET, oldTarget, newTarget);
+					Chor4intPackage.SEQUENCE_FLOW__TARGET, oldTarget, newTarget);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -123,16 +123,16 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 		if (newTarget != target) {
 			NotificationChain msgs = null;
 			if (target != null)
-				msgs = ((InternalEObject) target).eInverseRemove(this, ChormetamodelPackage.FLOW_NODE__INCOMINGS,
+				msgs = ((InternalEObject) target).eInverseRemove(this, Chor4intPackage.FLOW_NODE__INCOMINGS,
 						FlowNode.class, msgs);
 			if (newTarget != null)
-				msgs = ((InternalEObject) newTarget).eInverseAdd(this, ChormetamodelPackage.FLOW_NODE__INCOMINGS,
+				msgs = ((InternalEObject) newTarget).eInverseAdd(this, Chor4intPackage.FLOW_NODE__INCOMINGS,
 						FlowNode.class, msgs);
 			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ChormetamodelPackage.SEQUENCE_FLOW__TARGET, newTarget,
+			eNotify(new ENotificationImpl(this, Notification.SET, Chor4intPackage.SEQUENCE_FLOW__TARGET, newTarget,
 					newTarget));
 	}
 
@@ -147,8 +147,8 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 			source = (FlowNode) eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ChormetamodelPackage.SEQUENCE_FLOW__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Chor4intPackage.SEQUENCE_FLOW__SOURCE,
+							oldSource, source));
 			}
 		}
 		return source;
@@ -173,7 +173,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 		source = newSource;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					ChormetamodelPackage.SEQUENCE_FLOW__SOURCE, oldSource, newSource);
+					Chor4intPackage.SEQUENCE_FLOW__SOURCE, oldSource, newSource);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -191,16 +191,16 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject) source).eInverseRemove(this, ChormetamodelPackage.FLOW_NODE__OUTGOINGS,
+				msgs = ((InternalEObject) source).eInverseRemove(this, Chor4intPackage.FLOW_NODE__OUTGOINGS,
 						FlowNode.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject) newSource).eInverseAdd(this, ChormetamodelPackage.FLOW_NODE__OUTGOINGS,
+				msgs = ((InternalEObject) newSource).eInverseAdd(this, Chor4intPackage.FLOW_NODE__OUTGOINGS,
 						FlowNode.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ChormetamodelPackage.SEQUENCE_FLOW__SOURCE, newSource,
+			eNotify(new ENotificationImpl(this, Notification.SET, Chor4intPackage.SEQUENCE_FLOW__SOURCE, newSource,
 					newSource));
 	}
 
@@ -212,14 +212,14 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ChormetamodelPackage.SEQUENCE_FLOW__TARGET:
+		case Chor4intPackage.SEQUENCE_FLOW__TARGET:
 			if (target != null)
-				msgs = ((InternalEObject) target).eInverseRemove(this, ChormetamodelPackage.FLOW_NODE__INCOMINGS,
+				msgs = ((InternalEObject) target).eInverseRemove(this, Chor4intPackage.FLOW_NODE__INCOMINGS,
 						FlowNode.class, msgs);
 			return basicSetTarget((FlowNode) otherEnd, msgs);
-		case ChormetamodelPackage.SEQUENCE_FLOW__SOURCE:
+		case Chor4intPackage.SEQUENCE_FLOW__SOURCE:
 			if (source != null)
-				msgs = ((InternalEObject) source).eInverseRemove(this, ChormetamodelPackage.FLOW_NODE__OUTGOINGS,
+				msgs = ((InternalEObject) source).eInverseRemove(this, Chor4intPackage.FLOW_NODE__OUTGOINGS,
 						FlowNode.class, msgs);
 			return basicSetSource((FlowNode) otherEnd, msgs);
 		}
@@ -234,9 +234,9 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ChormetamodelPackage.SEQUENCE_FLOW__TARGET:
+		case Chor4intPackage.SEQUENCE_FLOW__TARGET:
 			return basicSetTarget(null, msgs);
-		case ChormetamodelPackage.SEQUENCE_FLOW__SOURCE:
+		case Chor4intPackage.SEQUENCE_FLOW__SOURCE:
 			return basicSetSource(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -250,11 +250,11 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ChormetamodelPackage.SEQUENCE_FLOW__TARGET:
+		case Chor4intPackage.SEQUENCE_FLOW__TARGET:
 			if (resolve)
 				return getTarget();
 			return basicGetTarget();
-		case ChormetamodelPackage.SEQUENCE_FLOW__SOURCE:
+		case Chor4intPackage.SEQUENCE_FLOW__SOURCE:
 			if (resolve)
 				return getSource();
 			return basicGetSource();
@@ -270,10 +270,10 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ChormetamodelPackage.SEQUENCE_FLOW__TARGET:
+		case Chor4intPackage.SEQUENCE_FLOW__TARGET:
 			setTarget((FlowNode) newValue);
 			return;
-		case ChormetamodelPackage.SEQUENCE_FLOW__SOURCE:
+		case Chor4intPackage.SEQUENCE_FLOW__SOURCE:
 			setSource((FlowNode) newValue);
 			return;
 		}
@@ -288,10 +288,10 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.SEQUENCE_FLOW__TARGET:
+		case Chor4intPackage.SEQUENCE_FLOW__TARGET:
 			setTarget((FlowNode) null);
 			return;
-		case ChormetamodelPackage.SEQUENCE_FLOW__SOURCE:
+		case Chor4intPackage.SEQUENCE_FLOW__SOURCE:
 			setSource((FlowNode) null);
 			return;
 		}
@@ -306,9 +306,9 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.SEQUENCE_FLOW__TARGET:
+		case Chor4intPackage.SEQUENCE_FLOW__TARGET:
 			return target != null;
-		case ChormetamodelPackage.SEQUENCE_FLOW__SOURCE:
+		case Chor4intPackage.SEQUENCE_FLOW__SOURCE:
 			return source != null;
 		}
 		return super.eIsSet(featureID);

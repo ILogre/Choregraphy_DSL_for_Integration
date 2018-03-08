@@ -8,7 +8,7 @@ package com.chor4integration.chor4int;
  * <!-- end-user-doc -->
  *
  *
- * @see com.chor4integration.chor4int.ChormetamodelPackage#getGateway()
+ * @see com.chor4integration.chor4int.Chor4intPackage#getGateway()
  * @model abstract="true"
  * @generated
  */

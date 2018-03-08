@@ -2,8 +2,8 @@
  */
 package com.chor4integration.chor4int.impl;
 
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.Choreography;
-import com.chor4integration.chor4int.ChormetamodelPackage;
 import com.chor4integration.chor4int.FlowElement;
 
 import java.util.Collection;
@@ -60,7 +60,7 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ChormetamodelPackage.Literals.CHOREOGRAPHY;
+		return Chor4intPackage.Literals.CHOREOGRAPHY;
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 	public EList<FlowElement> getFlowElements() {
 		if (flowElements == null) {
 			flowElements = new EObjectContainmentEList<FlowElement>(FlowElement.class, this,
-					ChormetamodelPackage.CHOREOGRAPHY__FLOW_ELEMENTS);
+					Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS);
 		}
 		return flowElements;
 	}
@@ -84,7 +84,7 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ChormetamodelPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
+		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			return ((InternalEList<?>) getFlowElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -98,7 +98,7 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ChormetamodelPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
+		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			return getFlowElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -113,7 +113,7 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ChormetamodelPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
+		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			getFlowElements().clear();
 			getFlowElements().addAll((Collection<? extends FlowElement>) newValue);
 			return;
@@ -129,7 +129,7 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
+		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			getFlowElements().clear();
 			return;
 		}
@@ -144,7 +144,7 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ChormetamodelPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
+		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			return flowElements != null && !flowElements.isEmpty();
 		}
 		return super.eIsSet(featureID);

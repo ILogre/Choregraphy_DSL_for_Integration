@@ -3,7 +3,7 @@
 package com.chor4integration.chor4int.provider;
 
 import com.chor4integration.chor4int.AtomicInteraction;
-import com.chor4integration.chor4int.ChormetamodelPackage;
+import com.chor4integration.chor4int.Chor4intPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -54,13 +54,12 @@ public class AtomicInteractionItemProvider extends InteractionItemProvider {
 	 * @generated
 	 */
 	protected void addTargetOperationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_AtomicInteraction_targetOperation_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_AtomicInteraction_targetOperation_feature",
-								"_UI_AtomicInteraction_type"),
-						ChormetamodelPackage.Literals.ATOMIC_INTERACTION__TARGET_OPERATION, true, false, true, null,
-						null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_AtomicInteraction_targetOperation_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AtomicInteraction_targetOperation_feature",
+						"_UI_AtomicInteraction_type"),
+				Chor4intPackage.Literals.ATOMIC_INTERACTION__TARGET_OPERATION, true, false, true, null, null, null));
 	}
 
 	/**
