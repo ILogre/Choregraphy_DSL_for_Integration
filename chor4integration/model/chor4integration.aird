@@ -6,6 +6,7 @@
     <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
     <semanticResources>platform:/resource/integration/model/integration.ecore</semanticResources>
     <semanticResources>chor4integration.ecore</semanticResources>
+    <semanticResources>platform:/resource/integration/model/integration.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_ELcEICCMEei2StwC0ib9hQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_p0_W8CFeEeiLGYt3XKPBvg" name="Chor4Integration" repPath="#_p09hwCFeEeiLGYt3XKPBvg">

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated chor4integration -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="chor4integration.presentation.Chor4integrationModelWizardID"
+            name="%_UI_Chor4integrationModelWizard_label"
+            class="chor4integration.presentation.Chor4integrationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Chor4integrationModelFile.gif">
+         <description>%_UI_Chor4integrationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated chor4integration -->
+      <editor
+            id="chor4integration.presentation.Chor4integrationEditorID"
+            name="%_UI_Chor4integrationEditor_label"
+            icon="icons/full/obj16/Chor4integrationModelFile.gif"
+            extensions="chor4integration"
+            class="chor4integration.presentation.Chor4integrationEditor"
+            contributorClass="chor4integration.presentation.Chor4integrationActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

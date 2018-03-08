@@ -5,18 +5,37 @@
     editDirectory="/chor4integration.edit/src-gen" editorDirectory="/chor4integration.editor/src-gen"
     modelPluginID="chor4integration" modelName="Chor4integration" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
+    copyrightFields="false" usedGenPackages="../../integration/model/integration.genmodel#//integration"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>chor4integration.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Chor4integration" disposableProviderFactory="true" ecorePackage="chor4integration.ecore#/">
     <genClasses ecoreClass="chor4integration.ecore#//ScenarioFlow">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference chor4integration.ecore#//ScenarioFlow/flowelements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference chor4integration.ecore#//ScenarioFlow/flowElements"/>
     </genClasses>
     <genClasses ecoreClass="chor4integration.ecore#//FlowElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chor4integration.ecore#//FlowElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="chor4integration.ecore#//Message">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chor4integration.ecore#//Message/content"/>
+    <genClasses image="false" ecoreClass="chor4integration.ecore#//FlowNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference chor4integration.ecore#//FlowNode/incomings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference chor4integration.ecore#//FlowNode/outgoings"/>
+    </genClasses>
+    <genClasses ecoreClass="chor4integration.ecore#//SequenceFlow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference chor4integration.ecore#//SequenceFlow/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference chor4integration.ecore#//SequenceFlow/source"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="chor4integration.ecore#//Gateway"/>
+    <genClasses ecoreClass="chor4integration.ecore#//ExclusiveGateway"/>
+    <genClasses ecoreClass="chor4integration.ecore#//ParallelGateway"/>
+    <genClasses image="false" ecoreClass="chor4integration.ecore#//Event"/>
+    <genClasses ecoreClass="chor4integration.ecore#//StartEvent"/>
+    <genClasses ecoreClass="chor4integration.ecore#//EndEvent"/>
+    <genClasses image="false" ecoreClass="chor4integration.ecore#//Interaction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference chor4integration.ecore#//Interaction/sender"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference chor4integration.ecore#//Interaction/receiver"/>
+    </genClasses>
+    <genClasses ecoreClass="chor4integration.ecore#//AtomicInteraction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference chor4integration.ecore#//AtomicInteraction/targetOperation"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

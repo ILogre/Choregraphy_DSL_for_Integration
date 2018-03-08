@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated integration -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="integration.presentation.IntegrationModelWizardID"
+            name="%_UI_IntegrationModelWizard_label"
+            class="integration.presentation.IntegrationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/IntegrationModelFile.gif">
+         <description>%_UI_IntegrationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated integration -->
+      <editor
+            id="integration.presentation.IntegrationEditorID"
+            name="%_UI_IntegrationEditor_label"
+            icon="icons/full/obj16/IntegrationModelFile.gif"
+            extensions="integration"
+            class="integration.presentation.IntegrationEditor"
+            contributorClass="integration.presentation.IntegrationActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
