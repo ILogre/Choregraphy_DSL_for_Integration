@@ -9,7 +9,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: com.chor4integration.chormetamodel,
  com.chor4integration.chormetamodel.impl,
- com.chor4integration.chormetamodel.util
+ com.chor4integration.chormetamodel.util,
+ com.chor4integration.chor4int,
+ com.chor4integration.chor4int.impl,
+ com.chor4integration.chor4int.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  com.chor4integration.servicesmetamodel;visibility:=reexport,
  org.eclipse.core.runtime

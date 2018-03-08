@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.chor4integration.textdsl.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.chor4integration.textdsl.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.chor4integration.textdsl,
+ com.chor4integration.textdsl.ide,
+ com.chor4integration.chormetamodel,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.chor4integration.textdsl.ui.quickfix,
+ com.chor4integration.textdsl.ui.internal,
+ com.chor4integration.textdsl.ui.contentassist
+Bundle-Activator: com.chor4integration.textdsl.ui.internal.TextdslActivator

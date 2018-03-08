@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="com.chor4integration.chormetamodel.presentation.ChormetamodelModelWizardID"
+            id="com.chor4integration.chor4int.presentation.ChormetamodelModelWizardID"
             name="%_UI_ChormetamodelModelWizard_label"
-            class="com.chor4integration.chormetamodel.presentation.ChormetamodelModelWizard"
+            class="com.chor4integration.chor4int.presentation.ChormetamodelModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ChormetamodelModelFile.gif">
          <description>%_UI_ChormetamodelModelWizard_description</description>
@@ -25,13 +25,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated chormetamodel -->
       <editor
-            id="com.chor4integration.chormetamodel.presentation.ChormetamodelEditorID"
+            id="com.chor4integration.chor4int.presentation.ChormetamodelEditorID"
             name="%_UI_ChormetamodelEditor_label"
             icon="icons/full/obj16/ChormetamodelModelFile.gif"
             extensions="chormetamodel"
-            class="com.chor4integration.chormetamodel.presentation.ChormetamodelEditor"
-            contributorClass="com.chor4integration.chormetamodel.presentation.ChormetamodelActionBarContributor">
+            class="com.chor4integration.chor4int.presentation.ChormetamodelEditor"
+            contributorClass="com.chor4integration.chor4int.presentation.ChormetamodelActionBarContributor">
       </editor>
    </extension>
-
 </plugin>

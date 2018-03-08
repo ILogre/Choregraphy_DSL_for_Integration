@@ -10,7 +10,7 @@
       <!-- @generated chormetamodel -->
       <factory
             uri="http://www.chor4integration.com/chormetamodel"
-            class="com.chor4integration.chormetamodel.provider.ChormetamodelItemProviderAdapterFactory"
+            class="com.chor4integration.chor4int.provider.ChormetamodelItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

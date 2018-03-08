@@ -1,5 +1,5 @@
-@namespace(uri="http://www.chor4integration.com/chormetamodel", prefix="chormetamodel")
-package chormetamodel;
+@namespace(uri="http://www.chor4integration.com/chormetamodel", prefix="chor4int")
+package chor4int;
 
 import "http://www.eclipse.org/emf/2003/XMLType";
 import "platform:/resource/com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore";

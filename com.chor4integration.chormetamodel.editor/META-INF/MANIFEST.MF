@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: com.chor4integration.chormetamodel.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: com.chor4integration.chormetamodel.presentation.ChormetamodelEditorPlugin$Implementation
+Bundle-Activator: com.chor4integration.chor4int.presentation.ChormetamodelEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: com.chor4integration.chormetamodel.presentation
+Export-Package: com.chor4integration.chor4int.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  com.chor4integration.chormetamodel.edit;visibility:=reexport,

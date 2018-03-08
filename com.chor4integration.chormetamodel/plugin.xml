@@ -10,7 +10,7 @@
       <!-- @generated chormetamodel -->
       <package
             uri="http://www.chor4integration.com/chormetamodel"
-            class="com.chor4integration.chormetamodel.ChormetamodelPackage"
+            class="com.chor4integration.chor4int.ChormetamodelPackage"
             genModel="model/chormetamodel.genmodel"/>
    </extension>
 
