@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.chor4integration.xtextdsl.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.chor4integration.xtextdsl.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.chor4integration.xtextdsl,
+ com.chor4integration.chormetamodel,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
