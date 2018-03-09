@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Chor4IntegrationPlatform" sequenceNumber="31">
+<locations>
+<location id="com.chor4integration.feature.dsl" path="D:\Dev\gitProjects\Choregraphy_DSL_for_Integration" type="Feature"/>
+<location path="${eclipse_home}" type="Profile"/>
+</locations>
+<environment>
+<nl>en_US</nl>
+</environment>
+</target>

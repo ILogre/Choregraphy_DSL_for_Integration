@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Targetruntime
+Bundle-SymbolicName: com.chor4integration.targetruntime
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: CHOR4INTEGRATION
