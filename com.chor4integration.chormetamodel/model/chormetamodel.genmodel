@@ -38,5 +38,9 @@
     <genClasses ecoreClass="chormetamodel.ecore#//AtomicInteraction">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference chormetamodel.ecore#//AtomicInteraction/targetOperation"/>
     </genClasses>
+    <genClasses ecoreClass="chormetamodel.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chormetamodel.ecore#//Role/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chormetamodel.ecore#//Role/implementation"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

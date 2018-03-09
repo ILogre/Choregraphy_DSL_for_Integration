@@ -7,6 +7,7 @@ import "platform:/resource/com.chor4integration.servicesmetamodel/model/services
 
 class Choreography {
   val FlowElement[*] flowElements;
+  val Role[*] roles;
 }
 
 abstract class FlowElement {
@@ -47,10 +48,16 @@ class EndEvent extends Event{
 	
 }
 
+class Role{
+	ref servicesmetamodel.Actor[?] actor;
+	attr String name;
+}
+
+
 
 abstract class Interaction extends FlowNode {
-  ref servicesmetamodel.Role[1] sender;
-  ref servicesmetamodel.Role[1] receiver;
+  ref Role[1] sender;
+  ref Role[1] receiver;
 }
 
 class AtomicInteraction extends Interaction {

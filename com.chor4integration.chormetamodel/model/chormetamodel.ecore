@@ -5,6 +5,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Choreography">
     <eStructuralFeatures xsi:type="ecore:EReference" name="flowElements" upperBound="-1"
         eType="#//FlowElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="#//Role" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FlowElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -27,11 +29,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="#//FlowNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="StartEvent" eSuperTypes="#//Event"/>
   <eClassifiers xsi:type="ecore:EClass" name="EndEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Role">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actor" eType="ecore:EClass ../../com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore#//Actor"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Interaction" abstract="true" eSuperTypes="#//FlowNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sender" lowerBound="1"
-        eType="ecore:EClass ../../com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore#//Role"/>
+        eType="#//Role"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" lowerBound="1"
-        eType="ecore:EClass ../../com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore#//Role"/>
+        eType="#//Role"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicInteraction" eSuperTypes="#//Interaction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetOperation" eType="ecore:EClass ../../com.chor4integration.servicesmetamodel/model/servicesmetamodel.ecore#//Operation"/>
