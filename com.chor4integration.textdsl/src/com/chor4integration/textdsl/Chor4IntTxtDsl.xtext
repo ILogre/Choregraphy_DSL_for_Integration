@@ -10,10 +10,15 @@ Choreography returns Choreography:
 	'Choreography'
 	'{'
 		('flowElements' '{' flowElements+=FlowElement ( "," flowElements+=FlowElement)* '}' )?
+		('roles' '{' roles+=Role ( "," roles+=Role)* '}' )?
 	'}';
 
 FlowElement returns FlowElement:
 	SequenceFlow | ExclusiveGateway | ParallelGateway | StartEvent | EndEvent | AtomicInteraction;
+
+
+Actor returns servicesmetamodel::Actor:
+	Service | User;
 
 FlowNode returns FlowNode:
 	ExclusiveGateway | ParallelGateway | StartEvent | EndEvent | AtomicInteraction;
@@ -21,9 +26,14 @@ FlowNode returns FlowNode:
 
 
 
-Actor returns servicesmetamodel::Actor:
-	Service | User;
 
+Role returns Role:
+	{Role}
+	'Role'
+	name=EString
+	'{'
+		('actor' actor=[servicesmetamodel::Actor|EString])?
+	'}';
 
 EString returns ecore::EString:
 	STRING | ID;
@@ -78,18 +88,39 @@ AtomicInteraction returns AtomicInteraction:
 	'{'
 		('incomings' '(' incomings+=[SequenceFlow|EString] ( "," incomings+=[SequenceFlow|EString])* ')' )?
 		('outgoings' '(' outgoings+=[SequenceFlow|EString] ( "," outgoings+=[SequenceFlow|EString])* ')' )?
-		'sender' sender=[servicesmetamodel::Role|EString]
-		'receiver' receiver=[servicesmetamodel::Role|EString]
+		'sender' sender=[Role|EString]
+		'receiver' receiver=[Role|EString]
 		('targetOperation' targetOperation=[servicesmetamodel::Operation|EString])?
 	'}';
 
-Role returns servicesmetamodel::Role:
-	{servicesmetamodel::Role}
-	'Role'
+Operation returns servicesmetamodel::Operation:
+	'Operation'
 	name=EString
 	'{'
-		('implementation' implementation=[servicesmetamodel::Actor|EString])?
+		'sideEffect' sideEffect=EBoolean
+		'invokingMsg' invokingMsg=[servicesmetamodel::Message|EString]
+		('answeringMsg' answeringMsg=[servicesmetamodel::Message|EString])?
 	'}';
+
+EBoolean returns ecore::EBoolean:
+	'true' | 'false';
+
+Message returns servicesmetamodel::Message:
+	{servicesmetamodel::Message}
+	'Message'
+	'{'
+		('parameter' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}' )?
+	'}';
+
+Parameter returns servicesmetamodel::Parameter:
+	{servicesmetamodel::Parameter}
+	'Parameter'
+	'{'
+		('type' type=EJavaObject)?
+	'}';
+
+EJavaObject returns ecore::EJavaObject:
+	'EJavaObject' /* TODO: implement this rule and an appropriate IValueConverter */;
 
 Service returns servicesmetamodel::Service:
 	{servicesmetamodel::Service}
@@ -103,26 +134,3 @@ User returns servicesmetamodel::User:
 	{servicesmetamodel::User}
 	'User'
 	name=EString;
-
-Operation returns servicesmetamodel::Operation:
-	'Operation'
-	name=EString
-	'{'
-		('args' args=EJavaObject)?
-		'sideEffect' sideEffect=EBoolean
-		'invokingMsg' invokingMsg=[servicesmetamodel::Message|EString]
-		('answeringMsg' answeringMsg=[servicesmetamodel::Message|EString])?
-	'}';
-
-EJavaObject returns ecore::EJavaObject:
-	'EJavaObject' /* TODO: implement this rule and an appropriate IValueConverter */;
-
-EBoolean returns ecore::EBoolean:
-	'true' | 'false';
-
-Message returns servicesmetamodel::Message:
-	{servicesmetamodel::Message}
-	'Message'
-	'{'
-		('content' content=EJavaObject)?
-	'}';
