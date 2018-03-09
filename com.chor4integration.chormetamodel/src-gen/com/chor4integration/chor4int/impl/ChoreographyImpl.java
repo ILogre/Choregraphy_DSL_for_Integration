@@ -5,6 +5,7 @@ package com.chor4integration.chor4int.impl;
 import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.Choreography;
 import com.chor4integration.chor4int.FlowElement;
+import com.chor4integration.chor4int.Role;
 
 import java.util.Collection;
 
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.chor4integration.chor4int.impl.ChoreographyImpl#getFlowElements <em>Flow Elements</em>}</li>
+ *   <li>{@link com.chor4integration.chor4int.impl.ChoreographyImpl#getRoles <em>Roles</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +45,16 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 	 * @ordered
 	 */
 	protected EList<FlowElement> flowElements;
+
+	/**
+	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Role> roles;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,11 +93,25 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Role> getRoles() {
+		if (roles == null) {
+			roles = new EObjectContainmentEList<Role>(Role.class, this, Chor4intPackage.CHOREOGRAPHY__ROLES);
+		}
+		return roles;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			return ((InternalEList<?>) getFlowElements()).basicRemove(otherEnd, msgs);
+		case Chor4intPackage.CHOREOGRAPHY__ROLES:
+			return ((InternalEList<?>) getRoles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -100,6 +126,8 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 		switch (featureID) {
 		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			return getFlowElements();
+		case Chor4intPackage.CHOREOGRAPHY__ROLES:
+			return getRoles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,6 +145,10 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 			getFlowElements().clear();
 			getFlowElements().addAll((Collection<? extends FlowElement>) newValue);
 			return;
+		case Chor4intPackage.CHOREOGRAPHY__ROLES:
+			getRoles().clear();
+			getRoles().addAll((Collection<? extends Role>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -132,6 +164,9 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			getFlowElements().clear();
 			return;
+		case Chor4intPackage.CHOREOGRAPHY__ROLES:
+			getRoles().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -146,6 +181,8 @@ public class ChoreographyImpl extends MinimalEObjectImpl.Container implements Ch
 		switch (featureID) {
 		case Chor4intPackage.CHOREOGRAPHY__FLOW_ELEMENTS:
 			return flowElements != null && !flowElements.isEmpty();
+		case Chor4intPackage.CHOREOGRAPHY__ROLES:
+			return roles != null && !roles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

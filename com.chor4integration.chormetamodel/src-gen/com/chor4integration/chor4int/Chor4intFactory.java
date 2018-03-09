@@ -76,6 +76,15 @@ public interface Chor4intFactory extends EFactory {
 	EndEvent createEndEvent();
 
 	/**
+	 * Returns a new object of class '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Role</em>'.
+	 * @generated
+	 */
+	Role createRole();
+
+	/**
 	 * Returns a new object of class '<em>Atomic Interaction</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

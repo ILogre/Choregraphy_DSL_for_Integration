@@ -2,7 +2,7 @@
  */
 package com.chor4integration.servicesmetamodel.impl;
 
-import com.chor4integration.servicesmetamodel.Role;
+import com.chor4integration.servicesmetamodel.Actor;
 import com.chor4integration.servicesmetamodel.ServicesmetamodelPackage;
 import com.chor4integration.servicesmetamodel.StructuralView;
 
@@ -28,21 +28,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.chor4integration.servicesmetamodel.impl.StructuralViewImpl#getRoles <em>Roles</em>}</li>
+ *   <li>{@link com.chor4integration.servicesmetamodel.impl.StructuralViewImpl#getActors <em>Actors</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class StructuralViewImpl extends MinimalEObjectImpl.Container implements StructuralView {
 	/**
-	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
+	 * The cached value of the '{@link #getActors() <em>Actors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoles()
+	 * @see #getActors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Role> roles;
+	protected EList<Actor> actors;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,12 +68,12 @@ public class StructuralViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Role> getRoles() {
-		if (roles == null) {
-			roles = new EObjectContainmentEList<Role>(Role.class, this,
-					ServicesmetamodelPackage.STRUCTURAL_VIEW__ROLES);
+	public EList<Actor> getActors() {
+		if (actors == null) {
+			actors = new EObjectContainmentEList<Actor>(Actor.class, this,
+					ServicesmetamodelPackage.STRUCTURAL_VIEW__ACTORS);
 		}
-		return roles;
+		return actors;
 	}
 
 	/**
@@ -84,8 +84,8 @@ public class StructuralViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ROLES:
-			return ((InternalEList<?>) getRoles()).basicRemove(otherEnd, msgs);
+		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ACTORS:
+			return ((InternalEList<?>) getActors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,8 +98,8 @@ public class StructuralViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ROLES:
-			return getRoles();
+		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ACTORS:
+			return getActors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,9 +113,9 @@ public class StructuralViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ROLES:
-			getRoles().clear();
-			getRoles().addAll((Collection<? extends Role>) newValue);
+		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ACTORS:
+			getActors().clear();
+			getActors().addAll((Collection<? extends Actor>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,8 +129,8 @@ public class StructuralViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ROLES:
-			getRoles().clear();
+		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ACTORS:
+			getActors().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -144,8 +144,8 @@ public class StructuralViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ROLES:
-			return roles != null && !roles.isEmpty();
+		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ACTORS:
+			return actors != null && !actors.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

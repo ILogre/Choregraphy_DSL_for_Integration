@@ -1,10 +1,11 @@
 /**
  */
-package com.chor4integration.servicesmetamodel.impl;
+package com.chor4integration.chor4int.impl;
+
+import com.chor4integration.chor4int.Chor4intPackage;
+import com.chor4integration.chor4int.Role;
 
 import com.chor4integration.servicesmetamodel.Actor;
-import com.chor4integration.servicesmetamodel.Role;
-import com.chor4integration.servicesmetamodel.ServicesmetamodelPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -22,13 +23,23 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.chor4integration.servicesmetamodel.impl.RoleImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.chor4integration.servicesmetamodel.impl.RoleImpl#getImplementation <em>Implementation</em>}</li>
+ *   <li>{@link com.chor4integration.chor4int.impl.RoleImpl#getActor <em>Actor</em>}</li>
+ *   <li>{@link com.chor4integration.chor4int.impl.RoleImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
+	/**
+	 * The cached value of the '{@link #getActor() <em>Actor</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActor()
+	 * @generated
+	 * @ordered
+	 */
+	protected Actor actor;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,16 +61,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getImplementation() <em>Implementation</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImplementation()
-	 * @generated
-	 * @ordered
-	 */
-	protected Actor implementation;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -75,7 +76,46 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ServicesmetamodelPackage.Literals.ROLE;
+		return Chor4intPackage.Literals.ROLE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Actor getActor() {
+		if (actor != null && actor.eIsProxy()) {
+			InternalEObject oldActor = (InternalEObject) actor;
+			actor = (Actor) eResolveProxy(oldActor);
+			if (actor != oldActor) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Chor4intPackage.ROLE__ACTOR, oldActor,
+							actor));
+			}
+		}
+		return actor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Actor basicGetActor() {
+		return actor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActor(Actor newActor) {
+		Actor oldActor = actor;
+		actor = newActor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Chor4intPackage.ROLE__ACTOR, oldActor, actor));
 	}
 
 	/**
@@ -96,47 +136,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicesmetamodelPackage.ROLE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Actor getImplementation() {
-		if (implementation != null && implementation.eIsProxy()) {
-			InternalEObject oldImplementation = (InternalEObject) implementation;
-			implementation = (Actor) eResolveProxy(oldImplementation);
-			if (implementation != oldImplementation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ServicesmetamodelPackage.ROLE__IMPLEMENTATION, oldImplementation, implementation));
-			}
-		}
-		return implementation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Actor basicGetImplementation() {
-		return implementation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setImplementation(Actor newImplementation) {
-		Actor oldImplementation = implementation;
-		implementation = newImplementation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicesmetamodelPackage.ROLE__IMPLEMENTATION,
-					oldImplementation, implementation));
+			eNotify(new ENotificationImpl(this, Notification.SET, Chor4intPackage.ROLE__NAME, oldName, name));
 	}
 
 	/**
@@ -147,12 +147,12 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.ROLE__NAME:
-			return getName();
-		case ServicesmetamodelPackage.ROLE__IMPLEMENTATION:
+		case Chor4intPackage.ROLE__ACTOR:
 			if (resolve)
-				return getImplementation();
-			return basicGetImplementation();
+				return getActor();
+			return basicGetActor();
+		case Chor4intPackage.ROLE__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,11 +165,11 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.ROLE__NAME:
-			setName((String) newValue);
+		case Chor4intPackage.ROLE__ACTOR:
+			setActor((Actor) newValue);
 			return;
-		case ServicesmetamodelPackage.ROLE__IMPLEMENTATION:
-			setImplementation((Actor) newValue);
+		case Chor4intPackage.ROLE__NAME:
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,11 +183,11 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.ROLE__NAME:
-			setName(NAME_EDEFAULT);
+		case Chor4intPackage.ROLE__ACTOR:
+			setActor((Actor) null);
 			return;
-		case ServicesmetamodelPackage.ROLE__IMPLEMENTATION:
-			setImplementation((Actor) null);
+		case Chor4intPackage.ROLE__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -201,10 +201,10 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.ROLE__NAME:
+		case Chor4intPackage.ROLE__ACTOR:
+			return actor != null;
+		case Chor4intPackage.ROLE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case ServicesmetamodelPackage.ROLE__IMPLEMENTATION:
-			return implementation != null;
 		}
 		return super.eIsSet(featureID);
 	}

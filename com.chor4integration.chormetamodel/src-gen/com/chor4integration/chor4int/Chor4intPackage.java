@@ -76,13 +76,22 @@ public interface Chor4intPackage extends EPackage {
 	int CHOREOGRAPHY__FLOW_ELEMENTS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHOREOGRAPHY__ROLES = 1;
+
+	/**
 	 * The number of structural features of the '<em>Choreography</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHOREOGRAPHY_FEATURE_COUNT = 1;
+	int CHOREOGRAPHY_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Choreography</em>' class.
@@ -571,6 +580,52 @@ public interface Chor4intPackage extends EPackage {
 	int END_EVENT_OPERATION_COUNT = EVENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link com.chor4integration.chor4int.impl.RoleImpl <em>Role</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.chor4integration.chor4int.impl.RoleImpl
+	 * @see com.chor4integration.chor4int.impl.Chor4intPackageImpl#getRole()
+	 * @generated
+	 */
+	int ROLE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Actor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__ACTOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link com.chor4integration.chor4int.impl.InteractionImpl <em>Interaction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -578,7 +633,7 @@ public interface Chor4intPackage extends EPackage {
 	 * @see com.chor4integration.chor4int.impl.Chor4intPackageImpl#getInteraction()
 	 * @generated
 	 */
-	int INTERACTION = 10;
+	int INTERACTION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -651,7 +706,7 @@ public interface Chor4intPackage extends EPackage {
 	 * @see com.chor4integration.chor4int.impl.Chor4intPackageImpl#getAtomicInteraction()
 	 * @generated
 	 */
-	int ATOMIC_INTERACTION = 11;
+	int ATOMIC_INTERACTION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -745,6 +800,17 @@ public interface Chor4intPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getChoreography_FlowElements();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.chor4integration.chor4int.Choreography#getRoles <em>Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Roles</em>'.
+	 * @see com.chor4integration.chor4int.Choreography#getRoles()
+	 * @see #getChoreography()
+	 * @generated
+	 */
+	EReference getChoreography_Roles();
 
 	/**
 	 * Returns the meta object for class '{@link com.chor4integration.chor4int.FlowElement <em>Flow Element</em>}'.
@@ -892,6 +958,38 @@ public interface Chor4intPackage extends EPackage {
 	EClass getEndEvent();
 
 	/**
+	 * Returns the meta object for class '{@link com.chor4integration.chor4int.Role <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Role</em>'.
+	 * @see com.chor4integration.chor4int.Role
+	 * @generated
+	 */
+	EClass getRole();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.chor4integration.chor4int.Role#getActor <em>Actor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Actor</em>'.
+	 * @see com.chor4integration.chor4int.Role#getActor()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_Actor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.chor4integration.chor4int.Role#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.chor4integration.chor4int.Role#getName()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EAttribute getRole_Name();
+
+	/**
 	 * Returns the meta object for class '{@link com.chor4integration.chor4int.Interaction <em>Interaction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -984,6 +1082,14 @@ public interface Chor4intPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CHOREOGRAPHY__FLOW_ELEMENTS = eINSTANCE.getChoreography_FlowElements();
+
+		/**
+		 * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHOREOGRAPHY__ROLES = eINSTANCE.getChoreography_Roles();
 
 		/**
 		 * The meta object literal for the '{@link com.chor4integration.chor4int.impl.FlowElementImpl <em>Flow Element</em>}' class.
@@ -1114,6 +1220,32 @@ public interface Chor4intPackage extends EPackage {
 		 * @generated
 		 */
 		EClass END_EVENT = eINSTANCE.getEndEvent();
+
+		/**
+		 * The meta object literal for the '{@link com.chor4integration.chor4int.impl.RoleImpl <em>Role</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.chor4integration.chor4int.impl.RoleImpl
+		 * @see com.chor4integration.chor4int.impl.Chor4intPackageImpl#getRole()
+		 * @generated
+		 */
+		EClass ROLE = eINSTANCE.getRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Actor</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__ACTOR = eINSTANCE.getRole_Actor();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
 
 		/**
 		 * The meta object literal for the '{@link com.chor4integration.chor4int.impl.InteractionImpl <em>Interaction</em>}' class.

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.chor4integration.chor4int.Choreography#getFlowElements <em>Flow Elements</em>}</li>
+ *   <li>{@link com.chor4integration.chor4int.Choreography#getRoles <em>Roles</em>}</li>
  * </ul>
  *
  * @see com.chor4integration.chor4int.Chor4intPackage#getChoreography()
@@ -38,5 +39,21 @@ public interface Choreography extends EObject {
 	 * @generated
 	 */
 	EList<FlowElement> getFlowElements();
+
+	/**
+	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
+	 * The list contents are of type {@link com.chor4integration.chor4int.Role}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Roles</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Roles</em>' containment reference list.
+	 * @see com.chor4integration.chor4int.Chor4intPackage#getChoreography_Roles()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Role> getRoles();
 
 } // Choreography

@@ -2,7 +2,7 @@
  */
 package com.chor4integration.servicesmetamodel.provider;
 
-import com.chor4integration.servicesmetamodel.Role;
+import com.chor4integration.servicesmetamodel.Parameter;
 import com.chor4integration.servicesmetamodel.ServicesmetamodelPackage;
 
 import java.util.Collection;
@@ -25,12 +25,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.chor4integration.servicesmetamodel.Role} object.
+ * This is the item provider adapter for a {@link com.chor4integration.servicesmetamodel.Parameter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RoleItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ParameterItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +38,7 @@ public class RoleItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleItemProvider(AdapterFactory adapterFactory) {
+	public ParameterItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,51 +53,36 @@ public class RoleItemProvider extends ItemProviderAdapter implements IEditingDom
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addImplementationPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Role_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Role_name_feature", "_UI_Role_type"),
-						ServicesmetamodelPackage.Literals.ROLE__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_Parameter_type_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Parameter_type_feature",
+								"_UI_Parameter_type"),
+						ServicesmetamodelPackage.Literals.PARAMETER__TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Implementation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImplementationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Role_implementation_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Role_implementation_feature",
-								"_UI_Role_type"),
-						ServicesmetamodelPackage.Literals.ROLE__IMPLEMENTATION, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This returns Role.gif.
+	 * This returns Parameter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Role"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Parameter"));
 	}
 
 	/**
@@ -118,9 +103,10 @@ public class RoleItemProvider extends ItemProviderAdapter implements IEditingDom
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Role) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Role_type")
-				: getString("_UI_Role_type") + " " + label;
+		Object labelValue = ((Parameter) object).getType();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_Parameter_type")
+				: getString("_UI_Parameter_type") + " " + label;
 	}
 
 	/**
@@ -134,8 +120,8 @@ public class RoleItemProvider extends ItemProviderAdapter implements IEditingDom
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Role.class)) {
-		case ServicesmetamodelPackage.ROLE__NAME:
+		switch (notification.getFeatureID(Parameter.class)) {
+		case ServicesmetamodelPackage.PARAMETER__TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

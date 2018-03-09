@@ -4,16 +4,16 @@
 package com.chor4integration.textdsl.serializer;
 
 import com.chor4integration.chor4int.AtomicInteraction;
+import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.Choreography;
-import com.chor4integration.chor4int.ChormetamodelPackage;
 import com.chor4integration.chor4int.EndEvent;
 import com.chor4integration.chor4int.ExclusiveGateway;
 import com.chor4integration.chor4int.ParallelGateway;
+import com.chor4integration.chor4int.Role;
 import com.chor4integration.chor4int.SequenceFlow;
 import com.chor4integration.chor4int.StartEvent;
 import com.chor4integration.servicesmetamodel.Message;
 import com.chor4integration.servicesmetamodel.Operation;
-import com.chor4integration.servicesmetamodel.Role;
 import com.chor4integration.servicesmetamodel.Service;
 import com.chor4integration.servicesmetamodel.ServicesmetamodelPackage;
 import com.chor4integration.servicesmetamodel.User;
@@ -42,27 +42,30 @@ public class Chor4IntTxtDslSemanticSequencer extends AbstractDelegatingSemanticS
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == ChormetamodelPackage.eINSTANCE)
+		if (epackage == Chor4intPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case ChormetamodelPackage.ATOMIC_INTERACTION:
+			case Chor4intPackage.ATOMIC_INTERACTION:
 				sequence_AtomicInteraction(context, (AtomicInteraction) semanticObject); 
 				return; 
-			case ChormetamodelPackage.CHOREOGRAPHY:
+			case Chor4intPackage.CHOREOGRAPHY:
 				sequence_Choreography(context, (Choreography) semanticObject); 
 				return; 
-			case ChormetamodelPackage.END_EVENT:
+			case Chor4intPackage.END_EVENT:
 				sequence_EndEvent(context, (EndEvent) semanticObject); 
 				return; 
-			case ChormetamodelPackage.EXCLUSIVE_GATEWAY:
+			case Chor4intPackage.EXCLUSIVE_GATEWAY:
 				sequence_ExclusiveGateway(context, (ExclusiveGateway) semanticObject); 
 				return; 
-			case ChormetamodelPackage.PARALLEL_GATEWAY:
+			case Chor4intPackage.PARALLEL_GATEWAY:
 				sequence_ParallelGateway(context, (ParallelGateway) semanticObject); 
 				return; 
-			case ChormetamodelPackage.SEQUENCE_FLOW:
+			case Chor4intPackage.ROLE:
+				sequence_Role(context, (Role) semanticObject); 
+				return; 
+			case Chor4intPackage.SEQUENCE_FLOW:
 				sequence_SequenceFlow(context, (SequenceFlow) semanticObject); 
 				return; 
-			case ChormetamodelPackage.START_EVENT:
+			case Chor4intPackage.START_EVENT:
 				sequence_StartEvent(context, (StartEvent) semanticObject); 
 				return; 
 			}
@@ -74,8 +77,8 @@ public class Chor4IntTxtDslSemanticSequencer extends AbstractDelegatingSemanticS
 			case ServicesmetamodelPackage.OPERATION:
 				sequence_Operation(context, (Operation) semanticObject); 
 				return; 
-			case ServicesmetamodelPackage.ROLE:
-				sequence_Role(context, (Role) semanticObject); 
+			case ServicesmetamodelPackage.PARAMETER:
+				sequence_Parameter(context, (com.chor4integration.servicesmetamodel.Parameter) semanticObject); 
 				return; 
 			case ServicesmetamodelPackage.SERVICE:
 				sequence_Service(context, (Service) semanticObject); 
@@ -114,7 +117,7 @@ public class Chor4IntTxtDslSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Choreography returns Choreography
 	 *
 	 * Constraint:
-	 *     (flowElements+=FlowElement flowElements+=FlowElement*)?
+	 *     ((flowElements+=FlowElement flowElements+=FlowElement*)? (roles+=Role roles+=Role*)?)
 	 */
 	protected void sequence_Choreography(ISerializationContext context, Choreography semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -162,7 +165,7 @@ public class Chor4IntTxtDslSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Message returns Message
 	 *
 	 * Constraint:
-	 *     content=EJavaObject?
+	 *     (parameter+=Parameter parameter+=Parameter*)?
 	 */
 	protected void sequence_Message(ISerializationContext context, Message semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -174,7 +177,7 @@ public class Chor4IntTxtDslSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Operation returns Operation
 	 *
 	 * Constraint:
-	 *     (name=EString args=EJavaObject? sideEffect=EBoolean invokingMsg=[Message|EString] answeringMsg=[Message|EString]?)
+	 *     (name=EString sideEffect=EBoolean invokingMsg=[Message|EString] answeringMsg=[Message|EString]?)
 	 */
 	protected void sequence_Operation(ISerializationContext context, Operation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -201,10 +204,22 @@ public class Chor4IntTxtDslSemanticSequencer extends AbstractDelegatingSemanticS
 	
 	/**
 	 * Contexts:
+	 *     Parameter returns Parameter
+	 *
+	 * Constraint:
+	 *     type=EJavaObject?
+	 */
+	protected void sequence_Parameter(ISerializationContext context, com.chor4integration.servicesmetamodel.Parameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Role returns Role
 	 *
 	 * Constraint:
-	 *     (name=EString implementation=[Actor|EString]?)
+	 *     (name=EString actor=[Actor|EString]?)
 	 */
 	protected void sequence_Role(ISerializationContext context, Role semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -221,17 +236,17 @@ public class Chor4IntTxtDslSemanticSequencer extends AbstractDelegatingSemanticS
 	 */
 	protected void sequence_SequenceFlow(ISerializationContext context, SequenceFlow semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ChormetamodelPackage.Literals.FLOW_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ChormetamodelPackage.Literals.FLOW_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, ChormetamodelPackage.Literals.SEQUENCE_FLOW__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ChormetamodelPackage.Literals.SEQUENCE_FLOW__TARGET));
-			if (transientValues.isValueTransient(semanticObject, ChormetamodelPackage.Literals.SEQUENCE_FLOW__SOURCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ChormetamodelPackage.Literals.SEQUENCE_FLOW__SOURCE));
+			if (transientValues.isValueTransient(semanticObject, Chor4intPackage.Literals.FLOW_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Chor4intPackage.Literals.FLOW_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, Chor4intPackage.Literals.SEQUENCE_FLOW__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Chor4intPackage.Literals.SEQUENCE_FLOW__TARGET));
+			if (transientValues.isValueTransient(semanticObject, Chor4intPackage.Literals.SEQUENCE_FLOW__SOURCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Chor4intPackage.Literals.SEQUENCE_FLOW__SOURCE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSequenceFlowAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSequenceFlowAccess().getTargetFlowNodeEStringParserRuleCall_4_0_1(), semanticObject.eGet(ChormetamodelPackage.Literals.SEQUENCE_FLOW__TARGET, false));
-		feeder.accept(grammarAccess.getSequenceFlowAccess().getSourceFlowNodeEStringParserRuleCall_6_0_1(), semanticObject.eGet(ChormetamodelPackage.Literals.SEQUENCE_FLOW__SOURCE, false));
+		feeder.accept(grammarAccess.getSequenceFlowAccess().getTargetFlowNodeEStringParserRuleCall_4_0_1(), semanticObject.eGet(Chor4intPackage.Literals.SEQUENCE_FLOW__TARGET, false));
+		feeder.accept(grammarAccess.getSequenceFlowAccess().getSourceFlowNodeEStringParserRuleCall_6_0_1(), semanticObject.eGet(Chor4intPackage.Literals.SEQUENCE_FLOW__SOURCE, false));
 		feeder.finish();
 	}
 	

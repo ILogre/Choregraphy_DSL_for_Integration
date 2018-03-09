@@ -67,11 +67,6 @@ public class ServicesmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected ServicesmetamodelSwitch<Adapter> modelSwitch = new ServicesmetamodelSwitch<Adapter>() {
 		@Override
-		public Adapter caseRole(Role object) {
-			return createRoleAdapter();
-		}
-
-		@Override
 		public Adapter caseService(Service object) {
 			return createServiceAdapter();
 		}
@@ -102,6 +97,11 @@ public class ServicesmetamodelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseParameter(Parameter object) {
+			return createParameterAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -118,20 +118,6 @@ public class ServicesmetamodelAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.chor4integration.servicesmetamodel.Role <em>Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.chor4integration.servicesmetamodel.Role
-	 * @generated
-	 */
-	public Adapter createRoleAdapter() {
-		return null;
 	}
 
 	/**
@@ -215,6 +201,20 @@ public class ServicesmetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.chor4integration.servicesmetamodel.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.chor4integration.servicesmetamodel.Parameter
+	 * @generated
+	 */
+	public Adapter createParameterAdapter() {
 		return null;
 	}
 

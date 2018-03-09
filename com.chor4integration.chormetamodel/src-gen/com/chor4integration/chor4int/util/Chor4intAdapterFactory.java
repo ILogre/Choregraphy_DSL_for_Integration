@@ -117,6 +117,11 @@ public class Chor4intAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseRole(Role object) {
+			return createRoleAdapter();
+		}
+
+		@Override
 		public Adapter caseInteraction(Interaction object) {
 			return createInteractionAdapter();
 		}
@@ -282,6 +287,20 @@ public class Chor4intAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEndEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.chor4integration.chor4int.Role <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.chor4integration.chor4int.Role
+	 * @generated
+	 */
+	public Adapter createRoleAdapter() {
 		return null;
 	}
 

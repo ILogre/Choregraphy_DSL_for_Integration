@@ -5,7 +5,7 @@ package com.chor4integration.servicesmetamodel.impl;
 import com.chor4integration.servicesmetamodel.Actor;
 import com.chor4integration.servicesmetamodel.Message;
 import com.chor4integration.servicesmetamodel.Operation;
-import com.chor4integration.servicesmetamodel.Role;
+import com.chor4integration.servicesmetamodel.Parameter;
 import com.chor4integration.servicesmetamodel.Service;
 import com.chor4integration.servicesmetamodel.ServicesmetamodelFactory;
 import com.chor4integration.servicesmetamodel.ServicesmetamodelPackage;
@@ -26,13 +26,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class ServicesmetamodelPackageImpl extends EPackageImpl implements ServicesmetamodelPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass roleEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,6 +67,13 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 	 * @generated
 	 */
 	private EClass actorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -143,33 +143,6 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRole() {
-		return roleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRole_Name() {
-		return (EAttribute) roleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRole_Implementation() {
-		return (EReference) roleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getService() {
 		return serviceEClass;
 	}
@@ -197,7 +170,7 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructuralView_Roles() {
+	public EReference getStructuralView_Actors() {
 		return (EReference) structuralViewEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -224,7 +197,7 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOperation_Args() {
+	public EAttribute getOperation_SideEffect() {
 		return (EAttribute) operationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -233,17 +206,8 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOperation_SideEffect() {
-		return (EAttribute) operationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getOperation_InvokingMsg() {
-		return (EReference) operationEClass.getEStructuralFeatures().get(3);
+		return (EReference) operationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -252,7 +216,7 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 	 * @generated
 	 */
 	public EReference getOperation_AnsweringMsg() {
-		return (EReference) operationEClass.getEStructuralFeatures().get(4);
+		return (EReference) operationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -269,8 +233,8 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMessage_Content() {
-		return (EAttribute) messageEClass.getEStructuralFeatures().get(0);
+	public EReference getMessage_Parameter() {
+		return (EReference) messageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -305,6 +269,24 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getParameter() {
+		return parameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParameter_Type() {
+		return (EAttribute) parameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ServicesmetamodelFactory getServicesmetamodelFactory() {
 		return (ServicesmetamodelFactory) getEFactoryInstance();
 	}
@@ -329,30 +311,28 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 		isCreated = true;
 
 		// Create classes and their features
-		roleEClass = createEClass(ROLE);
-		createEAttribute(roleEClass, ROLE__NAME);
-		createEReference(roleEClass, ROLE__IMPLEMENTATION);
-
 		serviceEClass = createEClass(SERVICE);
 		createEReference(serviceEClass, SERVICE__OPERATIONS);
 
 		structuralViewEClass = createEClass(STRUCTURAL_VIEW);
-		createEReference(structuralViewEClass, STRUCTURAL_VIEW__ROLES);
+		createEReference(structuralViewEClass, STRUCTURAL_VIEW__ACTORS);
 
 		operationEClass = createEClass(OPERATION);
 		createEAttribute(operationEClass, OPERATION__NAME);
-		createEAttribute(operationEClass, OPERATION__ARGS);
 		createEAttribute(operationEClass, OPERATION__SIDE_EFFECT);
 		createEReference(operationEClass, OPERATION__INVOKING_MSG);
 		createEReference(operationEClass, OPERATION__ANSWERING_MSG);
 
 		messageEClass = createEClass(MESSAGE);
-		createEAttribute(messageEClass, MESSAGE__CONTENT);
+		createEReference(messageEClass, MESSAGE__PARAMETER);
 
 		userEClass = createEClass(USER);
 
 		actorEClass = createEClass(ACTOR);
 		createEAttribute(actorEClass, ACTOR__NAME);
+
+		parameterEClass = createEClass(PARAMETER);
+		createEAttribute(parameterEClass, PARAMETER__TYPE);
 	}
 
 	/**
@@ -388,13 +368,6 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 		userEClass.getESuperTypes().add(this.getActor());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 1, 1, Role.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_Implementation(), this.getActor(), null, "implementation", null, 0, 1, Role.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getService_Operations(), this.getOperation(), null, "operations", null, 0, -1, Service.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -402,15 +375,13 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 
 		initEClass(structuralViewEClass, StructuralView.class, "StructuralView", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructuralView_Roles(), this.getRole(), null, "roles", null, 0, -1, StructuralView.class,
+		initEReference(getStructuralView_Actors(), this.getActor(), null, "actors", null, 0, -1, StructuralView.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 1, 1, Operation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperation_Args(), ecorePackage.getEJavaObject(), "args", null, 0, 1, Operation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperation_SideEffect(), ecorePackage.getEBoolean(), "sideEffect", "true", 1, 1,
 				Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
@@ -423,14 +394,20 @@ public class ServicesmetamodelPackageImpl extends EPackageImpl implements Servic
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMessage_Content(), ecorePackage.getEJavaObject(), "content", null, 0, 1, Message.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessage_Parameter(), this.getParameter(), null, "parameter", null, 0, -1, Message.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userEClass, User.class, "User", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(actorEClass, Actor.class, "Actor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Actor.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParameter_Type(), ecorePackage.getEJavaObject(), "type", null, 0, 1, Parameter.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

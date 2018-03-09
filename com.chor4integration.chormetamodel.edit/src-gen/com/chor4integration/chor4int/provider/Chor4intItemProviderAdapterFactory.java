@@ -211,6 +211,29 @@ public class Chor4intItemProviderAdapterFactory extends Chor4intAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.chor4integration.chor4int.Role} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RoleItemProvider roleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.chor4integration.chor4int.Role}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRoleAdapter() {
+		if (roleItemProvider == null) {
+			roleItemProvider = new RoleItemProvider(this);
+		}
+
+		return roleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link com.chor4integration.chor4int.AtomicInteraction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -344,6 +367,8 @@ public class Chor4intItemProviderAdapterFactory extends Chor4intAdapterFactory
 			startEventItemProvider.dispose();
 		if (endEventItemProvider != null)
 			endEventItemProvider.dispose();
+		if (roleItemProvider != null)
+			roleItemProvider.dispose();
 		if (atomicInteractionItemProvider != null)
 			atomicInteractionItemProvider.dispose();
 	}

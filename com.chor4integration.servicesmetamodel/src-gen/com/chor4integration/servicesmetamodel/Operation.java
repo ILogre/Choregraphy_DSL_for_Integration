@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.chor4integration.servicesmetamodel.Operation#getName <em>Name</em>}</li>
- *   <li>{@link com.chor4integration.servicesmetamodel.Operation#getArgs <em>Args</em>}</li>
  *   <li>{@link com.chor4integration.servicesmetamodel.Operation#isSideEffect <em>Side Effect</em>}</li>
  *   <li>{@link com.chor4integration.servicesmetamodel.Operation#getInvokingMsg <em>Invoking Msg</em>}</li>
  *   <li>{@link com.chor4integration.servicesmetamodel.Operation#getAnsweringMsg <em>Answering Msg</em>}</li>
@@ -50,32 +49,6 @@ public interface Operation extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Args</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Args</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Args</em>' attribute.
-	 * @see #setArgs(Object)
-	 * @see com.chor4integration.servicesmetamodel.ServicesmetamodelPackage#getOperation_Args()
-	 * @model
-	 * @generated
-	 */
-	Object getArgs();
-
-	/**
-	 * Sets the value of the '{@link com.chor4integration.servicesmetamodel.Operation#getArgs <em>Args</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Args</em>' attribute.
-	 * @see #getArgs()
-	 * @generated
-	 */
-	void setArgs(Object value);
 
 	/**
 	 * Returns the value of the '<em><b>Side Effect</b></em>' attribute.

@@ -70,7 +70,7 @@ public class StructuralViewItemProvider extends ItemProviderAdapter implements I
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ServicesmetamodelPackage.Literals.STRUCTURAL_VIEW__ROLES);
+			childrenFeatures.add(ServicesmetamodelPackage.Literals.STRUCTURAL_VIEW__ACTORS);
 		}
 		return childrenFeatures;
 	}
@@ -132,7 +132,7 @@ public class StructuralViewItemProvider extends ItemProviderAdapter implements I
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructuralView.class)) {
-		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ROLES:
+		case ServicesmetamodelPackage.STRUCTURAL_VIEW__ACTORS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -150,8 +150,11 @@ public class StructuralViewItemProvider extends ItemProviderAdapter implements I
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ServicesmetamodelPackage.Literals.STRUCTURAL_VIEW__ROLES,
-				ServicesmetamodelFactory.eINSTANCE.createRole()));
+		newChildDescriptors.add(createChildParameter(ServicesmetamodelPackage.Literals.STRUCTURAL_VIEW__ACTORS,
+				ServicesmetamodelFactory.eINSTANCE.createService()));
+
+		newChildDescriptors.add(createChildParameter(ServicesmetamodelPackage.Literals.STRUCTURAL_VIEW__ACTORS,
+				ServicesmetamodelFactory.eINSTANCE.createUser()));
 	}
 
 	/**

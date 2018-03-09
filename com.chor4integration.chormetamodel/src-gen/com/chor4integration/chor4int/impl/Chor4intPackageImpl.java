@@ -14,6 +14,7 @@ import com.chor4integration.chor4int.FlowNode;
 import com.chor4integration.chor4int.Gateway;
 import com.chor4integration.chor4int.Interaction;
 import com.chor4integration.chor4int.ParallelGateway;
+import com.chor4integration.chor4int.Role;
 import com.chor4integration.chor4int.SequenceFlow;
 import com.chor4integration.chor4int.StartEvent;
 
@@ -102,6 +103,13 @@ public class Chor4intPackageImpl extends EPackageImpl implements Chor4intPackage
 	 * @generated
 	 */
 	private EClass endEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass roleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,6 +207,15 @@ public class Chor4intPackageImpl extends EPackageImpl implements Chor4intPackage
 	 */
 	public EReference getChoreography_FlowElements() {
 		return (EReference) choreographyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChoreography_Roles() {
+		return (EReference) choreographyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -332,6 +349,33 @@ public class Chor4intPackageImpl extends EPackageImpl implements Chor4intPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRole() {
+		return roleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRole_Actor() {
+		return (EReference) roleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRole_Name() {
+		return (EAttribute) roleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInteraction() {
 		return interactionEClass;
 	}
@@ -403,6 +447,7 @@ public class Chor4intPackageImpl extends EPackageImpl implements Chor4intPackage
 		// Create classes and their features
 		choreographyEClass = createEClass(CHOREOGRAPHY);
 		createEReference(choreographyEClass, CHOREOGRAPHY__FLOW_ELEMENTS);
+		createEReference(choreographyEClass, CHOREOGRAPHY__ROLES);
 
 		flowElementEClass = createEClass(FLOW_ELEMENT);
 		createEAttribute(flowElementEClass, FLOW_ELEMENT__NAME);
@@ -426,6 +471,10 @@ public class Chor4intPackageImpl extends EPackageImpl implements Chor4intPackage
 		startEventEClass = createEClass(START_EVENT);
 
 		endEventEClass = createEClass(END_EVENT);
+
+		roleEClass = createEClass(ROLE);
+		createEReference(roleEClass, ROLE__ACTOR);
+		createEAttribute(roleEClass, ROLE__NAME);
 
 		interactionEClass = createEClass(INTERACTION);
 		createEReference(interactionEClass, INTERACTION__SENDER);
@@ -485,6 +534,9 @@ public class Chor4intPackageImpl extends EPackageImpl implements Chor4intPackage
 		initEReference(getChoreography_FlowElements(), this.getFlowElement(), null, "flowElements", null, 0, -1,
 				Choreography.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getChoreography_Roles(), this.getRole(), null, "roles", null, 0, -1, Choreography.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(flowElementEClass, FlowElement.class, "FlowElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -524,14 +576,21 @@ public class Chor4intPackageImpl extends EPackageImpl implements Chor4intPackage
 		initEClass(endEventEClass, EndEvent.class, "EndEvent", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRole_Actor(), theServicesmetamodelPackage.getActor(), null, "actor", null, 0, 1, Role.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 0, 1, Role.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(interactionEClass, Interaction.class, "Interaction", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInteraction_Sender(), theServicesmetamodelPackage.getRole(), null, "sender", null, 1, 1,
-				Interaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInteraction_Receiver(), theServicesmetamodelPackage.getRole(), null, "receiver", null, 1, 1,
-				Interaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInteraction_Sender(), this.getRole(), null, "sender", null, 1, 1, Interaction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInteraction_Receiver(), this.getRole(), null, "receiver", null, 1, 1, Interaction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(atomicInteractionEClass, AtomicInteraction.class, "AtomicInteraction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

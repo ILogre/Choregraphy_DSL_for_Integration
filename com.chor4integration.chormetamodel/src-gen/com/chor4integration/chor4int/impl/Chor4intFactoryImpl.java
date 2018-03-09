@@ -68,6 +68,8 @@ public class Chor4intFactoryImpl extends EFactoryImpl implements Chor4intFactory
 			return createStartEvent();
 		case Chor4intPackage.END_EVENT:
 			return createEndEvent();
+		case Chor4intPackage.ROLE:
+			return createRole();
 		case Chor4intPackage.ATOMIC_INTERACTION:
 			return createAtomicInteraction();
 		default:
@@ -133,6 +135,16 @@ public class Chor4intFactoryImpl extends EFactoryImpl implements Chor4intFactory
 	public EndEvent createEndEvent() {
 		EndEventImpl endEvent = new EndEventImpl();
 		return endEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role createRole() {
+		RoleImpl role = new RoleImpl();
+		return role;
 	}
 
 	/**

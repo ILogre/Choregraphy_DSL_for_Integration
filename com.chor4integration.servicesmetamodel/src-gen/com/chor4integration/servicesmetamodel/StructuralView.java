@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.chor4integration.servicesmetamodel.StructuralView#getRoles <em>Roles</em>}</li>
+ *   <li>{@link com.chor4integration.servicesmetamodel.StructuralView#getActors <em>Actors</em>}</li>
  * </ul>
  *
  * @see com.chor4integration.servicesmetamodel.ServicesmetamodelPackage#getStructuralView()
@@ -24,19 +24,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface StructuralView extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
-	 * The list contents are of type {@link com.chor4integration.servicesmetamodel.Role}.
+	 * Returns the value of the '<em><b>Actors</b></em>' containment reference list.
+	 * The list contents are of type {@link com.chor4integration.servicesmetamodel.Actor}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Roles</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Actors</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Roles</em>' containment reference list.
-	 * @see com.chor4integration.servicesmetamodel.ServicesmetamodelPackage#getStructuralView_Roles()
+	 * @return the value of the '<em>Actors</em>' containment reference list.
+	 * @see com.chor4integration.servicesmetamodel.ServicesmetamodelPackage#getStructuralView_Actors()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Role> getRoles();
+	EList<Actor> getActors();
 
 } // StructuralView

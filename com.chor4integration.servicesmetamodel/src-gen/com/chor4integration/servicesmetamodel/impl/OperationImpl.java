@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link com.chor4integration.servicesmetamodel.impl.OperationImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.chor4integration.servicesmetamodel.impl.OperationImpl#getArgs <em>Args</em>}</li>
  *   <li>{@link com.chor4integration.servicesmetamodel.impl.OperationImpl#isSideEffect <em>Side Effect</em>}</li>
  *   <li>{@link com.chor4integration.servicesmetamodel.impl.OperationImpl#getInvokingMsg <em>Invoking Msg</em>}</li>
  *   <li>{@link com.chor4integration.servicesmetamodel.impl.OperationImpl#getAnsweringMsg <em>Answering Msg</em>}</li>
@@ -51,26 +50,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getArgs() <em>Args</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getArgs()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Object ARGS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getArgs() <em>Args</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getArgs()
-	 * @generated
-	 * @ordered
-	 */
-	protected Object args = ARGS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isSideEffect() <em>Side Effect</em>}' attribute.
@@ -151,28 +130,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicesmetamodelPackage.OPERATION__NAME, oldName,
 					name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Object getArgs() {
-		return args;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setArgs(Object newArgs) {
-		Object oldArgs = args;
-		args = newArgs;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicesmetamodelPackage.OPERATION__ARGS, oldArgs,
-					args));
 	}
 
 	/**
@@ -287,8 +244,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 		switch (featureID) {
 		case ServicesmetamodelPackage.OPERATION__NAME:
 			return getName();
-		case ServicesmetamodelPackage.OPERATION__ARGS:
-			return getArgs();
 		case ServicesmetamodelPackage.OPERATION__SIDE_EFFECT:
 			return isSideEffect();
 		case ServicesmetamodelPackage.OPERATION__INVOKING_MSG:
@@ -314,9 +269,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 		case ServicesmetamodelPackage.OPERATION__NAME:
 			setName((String) newValue);
 			return;
-		case ServicesmetamodelPackage.OPERATION__ARGS:
-			setArgs(newValue);
-			return;
 		case ServicesmetamodelPackage.OPERATION__SIDE_EFFECT:
 			setSideEffect((Boolean) newValue);
 			return;
@@ -341,9 +293,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 		case ServicesmetamodelPackage.OPERATION__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case ServicesmetamodelPackage.OPERATION__ARGS:
-			setArgs(ARGS_EDEFAULT);
-			return;
 		case ServicesmetamodelPackage.OPERATION__SIDE_EFFECT:
 			setSideEffect(SIDE_EFFECT_EDEFAULT);
 			return;
@@ -367,8 +316,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 		switch (featureID) {
 		case ServicesmetamodelPackage.OPERATION__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case ServicesmetamodelPackage.OPERATION__ARGS:
-			return ARGS_EDEFAULT == null ? args != null : !ARGS_EDEFAULT.equals(args);
 		case ServicesmetamodelPackage.OPERATION__SIDE_EFFECT:
 			return sideEffect != SIDE_EFFECT_EDEFAULT;
 		case ServicesmetamodelPackage.OPERATION__INVOKING_MSG:
@@ -392,8 +339,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", args: ");
-		result.append(args);
 		result.append(", sideEffect: ");
 		result.append(sideEffect);
 		result.append(')');

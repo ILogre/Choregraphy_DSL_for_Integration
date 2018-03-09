@@ -73,29 +73,6 @@ public class ServicesmetamodelItemProviderAdapterFactory extends Servicesmetamod
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.chor4integration.servicesmetamodel.Role} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RoleItemProvider roleItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link com.chor4integration.servicesmetamodel.Role}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRoleAdapter() {
-		if (roleItemProvider == null) {
-			roleItemProvider = new RoleItemProvider(this);
-		}
-
-		return roleItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link com.chor4integration.servicesmetamodel.Service} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,6 +188,29 @@ public class ServicesmetamodelItemProviderAdapterFactory extends Servicesmetamod
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.chor4integration.servicesmetamodel.Parameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterItemProvider parameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.chor4integration.servicesmetamodel.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterAdapter() {
+		if (parameterItemProvider == null) {
+			parameterItemProvider = new ParameterItemProvider(this);
+		}
+
+		return parameterItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -309,8 +309,6 @@ public class ServicesmetamodelItemProviderAdapterFactory extends Servicesmetamod
 	 * @generated
 	 */
 	public void dispose() {
-		if (roleItemProvider != null)
-			roleItemProvider.dispose();
 		if (serviceItemProvider != null)
 			serviceItemProvider.dispose();
 		if (structuralViewItemProvider != null)
@@ -321,6 +319,8 @@ public class ServicesmetamodelItemProviderAdapterFactory extends Servicesmetamod
 			messageItemProvider.dispose();
 		if (userItemProvider != null)
 			userItemProvider.dispose();
+		if (parameterItemProvider != null)
+			parameterItemProvider.dispose();
 	}
 
 }

@@ -58,52 +58,6 @@ public interface ServicesmetamodelPackage extends EPackage {
 			.init();
 
 	/**
-	 * The meta object id for the '{@link com.chor4integration.servicesmetamodel.impl.RoleImpl <em>Role</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.chor4integration.servicesmetamodel.impl.RoleImpl
-	 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getRole()
-	 * @generated
-	 */
-	int ROLE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Implementation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__IMPLEMENTATION = 1;
-
-	/**
-	 * The number of structural features of the '<em>Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link com.chor4integration.servicesmetamodel.impl.ActorImpl <em>Actor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,7 +65,7 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getActor()
 	 * @generated
 	 */
-	int ACTOR = 6;
+	int ACTOR = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -148,7 +102,7 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 1;
+	int SERVICE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -194,16 +148,16 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getStructuralView()
 	 * @generated
 	 */
-	int STRUCTURAL_VIEW = 2;
+	int STRUCTURAL_VIEW = 1;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Actors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURAL_VIEW__ROLES = 0;
+	int STRUCTURAL_VIEW__ACTORS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Structural View</em>' class.
@@ -231,7 +185,7 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 3;
+	int OPERATION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -243,22 +197,13 @@ public interface ServicesmetamodelPackage extends EPackage {
 	int OPERATION__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Args</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION__ARGS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Side Effect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__SIDE_EFFECT = 2;
+	int OPERATION__SIDE_EFFECT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Invoking Msg</b></em>' reference.
@@ -267,7 +212,7 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__INVOKING_MSG = 3;
+	int OPERATION__INVOKING_MSG = 2;
 
 	/**
 	 * The feature id for the '<em><b>Answering Msg</b></em>' reference.
@@ -276,7 +221,7 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__ANSWERING_MSG = 4;
+	int OPERATION__ANSWERING_MSG = 3;
 
 	/**
 	 * The number of structural features of the '<em>Operation</em>' class.
@@ -285,7 +230,7 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_FEATURE_COUNT = 5;
+	int OPERATION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Operation</em>' class.
@@ -304,16 +249,16 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getMessage()
 	 * @generated
 	 */
-	int MESSAGE = 4;
+	int MESSAGE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__CONTENT = 0;
+	int MESSAGE__PARAMETER = 0;
 
 	/**
 	 * The number of structural features of the '<em>Message</em>' class.
@@ -341,7 +286,7 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getUser()
 	 * @generated
 	 */
-	int USER = 5;
+	int USER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -371,36 +316,41 @@ public interface ServicesmetamodelPackage extends EPackage {
 	int USER_OPERATION_COUNT = ACTOR_OPERATION_COUNT + 0;
 
 	/**
-	 * Returns the meta object for class '{@link com.chor4integration.servicesmetamodel.Role <em>Role</em>}'.
+	 * The meta object id for the '{@link com.chor4integration.servicesmetamodel.impl.ParameterImpl <em>Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Role</em>'.
-	 * @see com.chor4integration.servicesmetamodel.Role
+	 * @see com.chor4integration.servicesmetamodel.impl.ParameterImpl
+	 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getParameter()
 	 * @generated
 	 */
-	EClass getRole();
+	int PARAMETER = 6;
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.chor4integration.servicesmetamodel.Role#getName <em>Name</em>}'.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see com.chor4integration.servicesmetamodel.Role#getName()
-	 * @see #getRole()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getRole_Name();
+	int PARAMETER__TYPE = 0;
 
 	/**
-	 * Returns the meta object for the reference '{@link com.chor4integration.servicesmetamodel.Role#getImplementation <em>Implementation</em>}'.
+	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Implementation</em>'.
-	 * @see com.chor4integration.servicesmetamodel.Role#getImplementation()
-	 * @see #getRole()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getRole_Implementation();
+	int PARAMETER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link com.chor4integration.servicesmetamodel.Service <em>Service</em>}'.
@@ -434,15 +384,15 @@ public interface ServicesmetamodelPackage extends EPackage {
 	EClass getStructuralView();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.chor4integration.servicesmetamodel.StructuralView#getRoles <em>Roles</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.chor4integration.servicesmetamodel.StructuralView#getActors <em>Actors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Roles</em>'.
-	 * @see com.chor4integration.servicesmetamodel.StructuralView#getRoles()
+	 * @return the meta object for the containment reference list '<em>Actors</em>'.
+	 * @see com.chor4integration.servicesmetamodel.StructuralView#getActors()
 	 * @see #getStructuralView()
 	 * @generated
 	 */
-	EReference getStructuralView_Roles();
+	EReference getStructuralView_Actors();
 
 	/**
 	 * Returns the meta object for class '{@link com.chor4integration.servicesmetamodel.Operation <em>Operation</em>}'.
@@ -464,17 +414,6 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOperation_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.chor4integration.servicesmetamodel.Operation#getArgs <em>Args</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Args</em>'.
-	 * @see com.chor4integration.servicesmetamodel.Operation#getArgs()
-	 * @see #getOperation()
-	 * @generated
-	 */
-	EAttribute getOperation_Args();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.chor4integration.servicesmetamodel.Operation#isSideEffect <em>Side Effect</em>}'.
@@ -520,15 +459,15 @@ public interface ServicesmetamodelPackage extends EPackage {
 	EClass getMessage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.chor4integration.servicesmetamodel.Message#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.chor4integration.servicesmetamodel.Message#getParameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content</em>'.
-	 * @see com.chor4integration.servicesmetamodel.Message#getContent()
+	 * @return the meta object for the containment reference list '<em>Parameter</em>'.
+	 * @see com.chor4integration.servicesmetamodel.Message#getParameter()
 	 * @see #getMessage()
 	 * @generated
 	 */
-	EAttribute getMessage_Content();
+	EReference getMessage_Parameter();
 
 	/**
 	 * Returns the meta object for class '{@link com.chor4integration.servicesmetamodel.User <em>User</em>}'.
@@ -562,6 +501,27 @@ public interface ServicesmetamodelPackage extends EPackage {
 	EAttribute getActor_Name();
 
 	/**
+	 * Returns the meta object for class '{@link com.chor4integration.servicesmetamodel.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see com.chor4integration.servicesmetamodel.Parameter
+	 * @generated
+	 */
+	EClass getParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.chor4integration.servicesmetamodel.Parameter#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see com.chor4integration.servicesmetamodel.Parameter#getType()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Type();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -584,32 +544,6 @@ public interface ServicesmetamodelPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link com.chor4integration.servicesmetamodel.impl.RoleImpl <em>Role</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.chor4integration.servicesmetamodel.impl.RoleImpl
-		 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getRole()
-		 * @generated
-		 */
-		EClass ROLE = eINSTANCE.getRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Implementation</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROLE__IMPLEMENTATION = eINSTANCE.getRole_Implementation();
-
 		/**
 		 * The meta object literal for the '{@link com.chor4integration.servicesmetamodel.impl.ServiceImpl <em>Service</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -639,12 +573,12 @@ public interface ServicesmetamodelPackage extends EPackage {
 		EClass STRUCTURAL_VIEW = eINSTANCE.getStructuralView();
 
 		/**
-		 * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Actors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCTURAL_VIEW__ROLES = eINSTANCE.getStructuralView_Roles();
+		EReference STRUCTURAL_VIEW__ACTORS = eINSTANCE.getStructuralView_Actors();
 
 		/**
 		 * The meta object literal for the '{@link com.chor4integration.servicesmetamodel.impl.OperationImpl <em>Operation</em>}' class.
@@ -663,14 +597,6 @@ public interface ServicesmetamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OPERATION__NAME = eINSTANCE.getOperation_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Args</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERATION__ARGS = eINSTANCE.getOperation_Args();
 
 		/**
 		 * The meta object literal for the '<em><b>Side Effect</b></em>' attribute feature.
@@ -707,12 +633,12 @@ public interface ServicesmetamodelPackage extends EPackage {
 		EClass MESSAGE = eINSTANCE.getMessage();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parameter</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE__CONTENT = eINSTANCE.getMessage_Content();
+		EReference MESSAGE__PARAMETER = eINSTANCE.getMessage_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link com.chor4integration.servicesmetamodel.impl.UserImpl <em>User</em>}' class.
@@ -741,6 +667,24 @@ public interface ServicesmetamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTOR__NAME = eINSTANCE.getActor_Name();
+
+		/**
+		 * The meta object literal for the '{@link com.chor4integration.servicesmetamodel.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.chor4integration.servicesmetamodel.impl.ParameterImpl
+		 * @see com.chor4integration.servicesmetamodel.impl.ServicesmetamodelPackageImpl#getParameter()
+		 * @generated
+		 */
+		EClass PARAMETER = eINSTANCE.getParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__TYPE = eINSTANCE.getParameter_Type();
 
 	}
 

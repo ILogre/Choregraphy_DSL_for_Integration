@@ -2,6 +2,7 @@
  */
 package com.chor4integration.servicesmetamodel;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.chor4integration.servicesmetamodel.Message#getContent <em>Content</em>}</li>
+ *   <li>{@link com.chor4integration.servicesmetamodel.Message#getParameter <em>Parameter</em>}</li>
  * </ul>
  *
  * @see com.chor4integration.servicesmetamodel.ServicesmetamodelPackage#getMessage()
@@ -22,29 +23,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Message extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Content</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parameter</b></em>' containment reference list.
+	 * The list contents are of type {@link com.chor4integration.servicesmetamodel.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Content</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Parameter</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' attribute.
-	 * @see #setContent(Object)
-	 * @see com.chor4integration.servicesmetamodel.ServicesmetamodelPackage#getMessage_Content()
-	 * @model
+	 * @return the value of the '<em>Parameter</em>' containment reference list.
+	 * @see com.chor4integration.servicesmetamodel.ServicesmetamodelPackage#getMessage_Parameter()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Object getContent();
-
-	/**
-	 * Sets the value of the '{@link com.chor4integration.servicesmetamodel.Message#getContent <em>Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content</em>' attribute.
-	 * @see #getContent()
-	 * @generated
-	 */
-	void setContent(Object value);
+	EList<Parameter> getParameter();
 
 } // Message

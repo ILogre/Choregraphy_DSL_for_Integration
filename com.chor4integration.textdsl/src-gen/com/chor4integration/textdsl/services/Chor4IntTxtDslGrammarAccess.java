@@ -40,17 +40,28 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cFlowElementsAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
 		private final RuleCall cFlowElementsFlowElementParserRuleCall_3_3_1_0 = (RuleCall)cFlowElementsAssignment_3_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cRolesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cRolesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cRolesRoleParserRuleCall_4_2_0 = (RuleCall)cRolesAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
+		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
+		private final Assignment cRolesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cRolesRoleParserRuleCall_4_3_1_0 = (RuleCall)cRolesAssignment_4_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Choreography:
 		//	{Choreography}
 		//	'Choreography'
-		//	'{' ('flowElements' '{' flowElements+=FlowElement ("," flowElements+=FlowElement)* '}')?
+		//	'{' ('flowElements' '{' flowElements+=FlowElement ("," flowElements+=FlowElement)* '}')? ('roles' '{' roles+=Role
+		//	("," roles+=Role)* '}')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Choreography} 'Choreography' '{' ('flowElements' '{' flowElements+=FlowElement ("," flowElements+=FlowElement)* '}')?
-		//'}'
+		//('roles' '{' roles+=Role ("," roles+=Role)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Choreography}
@@ -92,8 +103,38 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3_4() { return cRightCurlyBracketKeyword_3_4; }
 		
+		//('roles' '{' roles+=Role ("," roles+=Role)* '}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'roles'
+		public Keyword getRolesKeyword_4_0() { return cRolesKeyword_4_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_4_2() { return cRolesAssignment_4_2; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_4_2_0() { return cRolesRoleParserRuleCall_4_2_0; }
+		
+		//("," roles+=Role)*
+		public Group getGroup_4_3() { return cGroup_4_3; }
+		
+		//","
+		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_4_3_1() { return cRolesAssignment_4_3_1; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_4_3_1_0() { return cRolesRoleParserRuleCall_4_3_1_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class FlowElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.FlowElement");
@@ -130,6 +171,25 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//AtomicInteraction
 		public RuleCall getAtomicInteractionParserRuleCall_5() { return cAtomicInteractionParserRuleCall_5; }
 	}
+	public class ActorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Actor");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cServiceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cUserParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Actor servicesmetamodel::Actor:
+		//	Service | User;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Service | User
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Service
+		public RuleCall getServiceParserRuleCall_0() { return cServiceParserRuleCall_0; }
+		
+		//User
+		public RuleCall getUserParserRuleCall_1() { return cUserParserRuleCall_1; }
+	}
 	public class FlowNodeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.FlowNode");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -161,24 +221,64 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//AtomicInteraction
 		public RuleCall getAtomicInteractionParserRuleCall_4() { return cAtomicInteractionParserRuleCall_4; }
 	}
-	public class ActorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Actor");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cServiceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cUserParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+	public class RoleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Role");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRoleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cRoleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cActorKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cActorAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cActorActorCrossReference_4_1_0 = (CrossReference)cActorAssignment_4_1.eContents().get(0);
+		private final RuleCall cActorActorEStringParserRuleCall_4_1_0_1 = (RuleCall)cActorActorCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//Actor servicesmetamodel::Actor:
-		//	Service | User;
+		//Role:
+		//	{Role}
+		//	'Role'
+		//	name=EString
+		//	'{' ('actor' actor=[servicesmetamodel::Actor|EString])?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Service | User
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//{Role} 'Role' name=EString '{' ('actor' actor=[servicesmetamodel::Actor|EString])? '}'
+		public Group getGroup() { return cGroup; }
 		
-		//Service
-		public RuleCall getServiceParserRuleCall_0() { return cServiceParserRuleCall_0; }
+		//{Role}
+		public Action getRoleAction_0() { return cRoleAction_0; }
 		
-		//User
-		public RuleCall getUserParserRuleCall_1() { return cUserParserRuleCall_1; }
+		//'Role'
+		public Keyword getRoleKeyword_1() { return cRoleKeyword_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//('actor' actor=[servicesmetamodel::Actor|EString])?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'actor'
+		public Keyword getActorKeyword_4_0() { return cActorKeyword_4_0; }
+		
+		//actor=[servicesmetamodel::Actor|EString]
+		public Assignment getActorAssignment_4_1() { return cActorAssignment_4_1; }
+		
+		//[servicesmetamodel::Actor|EString]
+		public CrossReference getActorActorCrossReference_4_1_0() { return cActorActorCrossReference_4_1_0; }
+		
+		//EString
+		public RuleCall getActorActorEStringParserRuleCall_4_1_0_1() { return cActorActorEStringParserRuleCall_4_1_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.EString");
@@ -870,17 +970,15 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=EString
 		//	'{' ('incomings' '(' incomings+=[SequenceFlow|EString] ("," incomings+=[SequenceFlow|EString])* ')')? ('outgoings'
 		//	'(' outgoings+=[SequenceFlow|EString] ("," outgoings+=[SequenceFlow|EString])* ')')?
-		//	'sender' sender=[servicesmetamodel::Role|EString]
-		//	'receiver' receiver=[servicesmetamodel::Role|EString] ('targetOperation'
-		//	targetOperation=[servicesmetamodel::Operation|EString])?
+		//	'sender' sender=[Role|EString]
+		//	'receiver' receiver=[Role|EString] ('targetOperation' targetOperation=[servicesmetamodel::Operation|EString])?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AtomicInteraction' name=EString '{' ('incomings' '(' incomings+=[SequenceFlow|EString] (","
 		//incomings+=[SequenceFlow|EString])* ')')? ('outgoings' '(' outgoings+=[SequenceFlow|EString] (","
-		//outgoings+=[SequenceFlow|EString])* ')')? 'sender' sender=[servicesmetamodel::Role|EString] 'receiver'
-		//receiver=[servicesmetamodel::Role|EString] ('targetOperation' targetOperation=[servicesmetamodel::Operation|EString])?
-		//'}'
+		//outgoings+=[SequenceFlow|EString])* ')')? 'sender' sender=[Role|EString] 'receiver' receiver=[Role|EString]
+		//('targetOperation' targetOperation=[servicesmetamodel::Operation|EString])? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'AtomicInteraction'
@@ -970,10 +1068,10 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'sender'
 		public Keyword getSenderKeyword_5() { return cSenderKeyword_5; }
 		
-		//sender=[servicesmetamodel::Role|EString]
+		//sender=[Role|EString]
 		public Assignment getSenderAssignment_6() { return cSenderAssignment_6; }
 		
-		//[servicesmetamodel::Role|EString]
+		//[Role|EString]
 		public CrossReference getSenderRoleCrossReference_6_0() { return cSenderRoleCrossReference_6_0; }
 		
 		//EString
@@ -982,10 +1080,10 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'receiver'
 		public Keyword getReceiverKeyword_7() { return cReceiverKeyword_7; }
 		
-		//receiver=[servicesmetamodel::Role|EString]
+		//receiver=[Role|EString]
 		public Assignment getReceiverAssignment_8() { return cReceiverAssignment_8; }
 		
-		//[servicesmetamodel::Role|EString]
+		//[Role|EString]
 		public CrossReference getReceiverRoleCrossReference_8_0() { return cReceiverRoleCrossReference_8_0; }
 		
 		//EString
@@ -1009,65 +1107,238 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
-	public class RoleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Role");
+	public class OperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Operation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cRoleAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cRoleKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cImplementationKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cImplementationAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cImplementationActorCrossReference_4_1_0 = (CrossReference)cImplementationAssignment_4_1.eContents().get(0);
-		private final RuleCall cImplementationActorEStringParserRuleCall_4_1_0_1 = (RuleCall)cImplementationActorCrossReference_4_1_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cOperationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cSideEffectKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSideEffectAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cSideEffectEBooleanParserRuleCall_4_0 = (RuleCall)cSideEffectAssignment_4.eContents().get(0);
+		private final Keyword cInvokingMsgKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cInvokingMsgAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cInvokingMsgMessageCrossReference_6_0 = (CrossReference)cInvokingMsgAssignment_6.eContents().get(0);
+		private final RuleCall cInvokingMsgMessageEStringParserRuleCall_6_0_1 = (RuleCall)cInvokingMsgMessageCrossReference_6_0.eContents().get(1);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cAnsweringMsgKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cAnsweringMsgAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final CrossReference cAnsweringMsgMessageCrossReference_7_1_0 = (CrossReference)cAnsweringMsgAssignment_7_1.eContents().get(0);
+		private final RuleCall cAnsweringMsgMessageEStringParserRuleCall_7_1_0_1 = (RuleCall)cAnsweringMsgMessageCrossReference_7_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//Role servicesmetamodel::Role:
-		//	{servicesmetamodel::Role}
-		//	'Role'
+		//Operation servicesmetamodel::Operation:
+		//	'Operation'
 		//	name=EString
-		//	'{' ('implementation' implementation=[servicesmetamodel::Actor|EString])?
+		//	'{'
+		//	'sideEffect' sideEffect=EBoolean
+		//	'invokingMsg' invokingMsg=[servicesmetamodel::Message|EString] ('answeringMsg'
+		//	answeringMsg=[servicesmetamodel::Message|EString])?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{servicesmetamodel::Role} 'Role' name=EString '{' ('implementation' implementation=[servicesmetamodel::Actor|EString])?
+		//'Operation' name=EString '{' 'sideEffect' sideEffect=EBoolean 'invokingMsg'
+		//invokingMsg=[servicesmetamodel::Message|EString] ('answeringMsg' answeringMsg=[servicesmetamodel::Message|EString])?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//{servicesmetamodel::Role}
-		public Action getRoleAction_0() { return cRoleAction_0; }
-		
-		//'Role'
-		public Keyword getRoleKeyword_1() { return cRoleKeyword_1; }
+		//'Operation'
+		public Keyword getOperationKeyword_0() { return cOperationKeyword_0; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//('implementation' implementation=[servicesmetamodel::Actor|EString])?
-		public Group getGroup_4() { return cGroup_4; }
+		//'sideEffect'
+		public Keyword getSideEffectKeyword_3() { return cSideEffectKeyword_3; }
 		
-		//'implementation'
-		public Keyword getImplementationKeyword_4_0() { return cImplementationKeyword_4_0; }
+		//sideEffect=EBoolean
+		public Assignment getSideEffectAssignment_4() { return cSideEffectAssignment_4; }
 		
-		//implementation=[servicesmetamodel::Actor|EString]
-		public Assignment getImplementationAssignment_4_1() { return cImplementationAssignment_4_1; }
+		//EBoolean
+		public RuleCall getSideEffectEBooleanParserRuleCall_4_0() { return cSideEffectEBooleanParserRuleCall_4_0; }
 		
-		//[servicesmetamodel::Actor|EString]
-		public CrossReference getImplementationActorCrossReference_4_1_0() { return cImplementationActorCrossReference_4_1_0; }
+		//'invokingMsg'
+		public Keyword getInvokingMsgKeyword_5() { return cInvokingMsgKeyword_5; }
+		
+		//invokingMsg=[servicesmetamodel::Message|EString]
+		public Assignment getInvokingMsgAssignment_6() { return cInvokingMsgAssignment_6; }
+		
+		//[servicesmetamodel::Message|EString]
+		public CrossReference getInvokingMsgMessageCrossReference_6_0() { return cInvokingMsgMessageCrossReference_6_0; }
 		
 		//EString
-		public RuleCall getImplementationActorEStringParserRuleCall_4_1_0_1() { return cImplementationActorEStringParserRuleCall_4_1_0_1; }
+		public RuleCall getInvokingMsgMessageEStringParserRuleCall_6_0_1() { return cInvokingMsgMessageEStringParserRuleCall_6_0_1; }
+		
+		//('answeringMsg' answeringMsg=[servicesmetamodel::Message|EString])?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'answeringMsg'
+		public Keyword getAnsweringMsgKeyword_7_0() { return cAnsweringMsgKeyword_7_0; }
+		
+		//answeringMsg=[servicesmetamodel::Message|EString]
+		public Assignment getAnsweringMsgAssignment_7_1() { return cAnsweringMsgAssignment_7_1; }
+		
+		//[servicesmetamodel::Message|EString]
+		public CrossReference getAnsweringMsgMessageCrossReference_7_1_0() { return cAnsweringMsgMessageCrossReference_7_1_0; }
+		
+		//EString
+		public RuleCall getAnsweringMsgMessageEStringParserRuleCall_7_1_0_1() { return cAnsweringMsgMessageEStringParserRuleCall_7_1_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+	}
+	public class EBooleanElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.EBoolean");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//EBoolean ecore::EBoolean:
+		//	'true' | 'false';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'true' | 'false'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'true'
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+		
+		//'false'
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+	}
+	public class MessageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Message");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cMessageKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cParameterKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cParameterAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cParameterParameterParserRuleCall_3_2_0 = (RuleCall)cParameterAssignment_3_2.eContents().get(0);
+		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
+		private final Keyword cCommaKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+		private final Assignment cParameterAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
+		private final RuleCall cParameterParameterParserRuleCall_3_3_1_0 = (RuleCall)cParameterAssignment_3_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Message servicesmetamodel::Message:
+		//	{servicesmetamodel::Message}
+		//	'Message'
+		//	'{' ('parameter' '{' parameter+=Parameter ("," parameter+=Parameter)* '}')?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{servicesmetamodel::Message} 'Message' '{' ('parameter' '{' parameter+=Parameter ("," parameter+=Parameter)* '}')? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{servicesmetamodel::Message}
+		public Action getMessageAction_0() { return cMessageAction_0; }
+		
+		//'Message'
+		public Keyword getMessageKeyword_1() { return cMessageKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//('parameter' '{' parameter+=Parameter ("," parameter+=Parameter)* '}')?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'parameter'
+		public Keyword getParameterKeyword_3_0() { return cParameterKeyword_3_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3_1() { return cLeftCurlyBracketKeyword_3_1; }
+		
+		//parameter+=Parameter
+		public Assignment getParameterAssignment_3_2() { return cParameterAssignment_3_2; }
+		
+		//Parameter
+		public RuleCall getParameterParameterParserRuleCall_3_2_0() { return cParameterParameterParserRuleCall_3_2_0; }
+		
+		//("," parameter+=Parameter)*
+		public Group getGroup_3_3() { return cGroup_3_3; }
+		
+		//","
+		public Keyword getCommaKeyword_3_3_0() { return cCommaKeyword_3_3_0; }
+		
+		//parameter+=Parameter
+		public Assignment getParameterAssignment_3_3_1() { return cParameterAssignment_3_3_1; }
+		
+		//Parameter
+		public RuleCall getParameterParameterParserRuleCall_3_3_1_0() { return cParameterParameterParserRuleCall_3_3_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3_4() { return cRightCurlyBracketKeyword_3_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class ParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Parameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cParameterAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cParameterKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTypeEJavaObjectParserRuleCall_3_1_0 = (RuleCall)cTypeAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Parameter servicesmetamodel::Parameter:
+		//	{servicesmetamodel::Parameter}
+		//	'Parameter'
+		//	'{' ('type' type=EJavaObject)?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{servicesmetamodel::Parameter} 'Parameter' '{' ('type' type=EJavaObject)? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{servicesmetamodel::Parameter}
+		public Action getParameterAction_0() { return cParameterAction_0; }
+		
+		//'Parameter'
+		public Keyword getParameterKeyword_1() { return cParameterKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//('type' type=EJavaObject)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'type'
+		public Keyword getTypeKeyword_3_0() { return cTypeKeyword_3_0; }
+		
+		//type=EJavaObject
+		public Assignment getTypeAssignment_3_1() { return cTypeAssignment_3_1; }
+		
+		//EJavaObject
+		public RuleCall getTypeEJavaObjectParserRuleCall_3_1_0() { return cTypeEJavaObjectParserRuleCall_3_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class EJavaObjectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.EJavaObject");
+		private final Keyword cEJavaObjectKeyword = (Keyword)rule.eContents().get(1);
+		
+		//EJavaObject ecore::EJavaObject:
+		//	'EJavaObject' /* TODO: implement this rule and an appropriate IValueConverter */;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'EJavaObject'
+		public Keyword getEJavaObjectKeyword() { return cEJavaObjectKeyword; }
 	}
 	public class ServiceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Service");
@@ -1178,191 +1449,13 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 	}
-	public class OperationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Operation");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOperationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cArgsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cArgsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cArgsEJavaObjectParserRuleCall_3_1_0 = (RuleCall)cArgsAssignment_3_1.eContents().get(0);
-		private final Keyword cSideEffectKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSideEffectAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSideEffectEBooleanParserRuleCall_5_0 = (RuleCall)cSideEffectAssignment_5.eContents().get(0);
-		private final Keyword cInvokingMsgKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cInvokingMsgAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cInvokingMsgMessageCrossReference_7_0 = (CrossReference)cInvokingMsgAssignment_7.eContents().get(0);
-		private final RuleCall cInvokingMsgMessageEStringParserRuleCall_7_0_1 = (RuleCall)cInvokingMsgMessageCrossReference_7_0.eContents().get(1);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cAnsweringMsgKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cAnsweringMsgAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final CrossReference cAnsweringMsgMessageCrossReference_8_1_0 = (CrossReference)cAnsweringMsgAssignment_8_1.eContents().get(0);
-		private final RuleCall cAnsweringMsgMessageEStringParserRuleCall_8_1_0_1 = (RuleCall)cAnsweringMsgMessageCrossReference_8_1_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		
-		//Operation servicesmetamodel::Operation:
-		//	'Operation'
-		//	name=EString
-		//	'{' ('args' args=EJavaObject)?
-		//	'sideEffect' sideEffect=EBoolean
-		//	'invokingMsg' invokingMsg=[servicesmetamodel::Message|EString] ('answeringMsg'
-		//	answeringMsg=[servicesmetamodel::Message|EString])?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Operation' name=EString '{' ('args' args=EJavaObject)? 'sideEffect' sideEffect=EBoolean 'invokingMsg'
-		//invokingMsg=[servicesmetamodel::Message|EString] ('answeringMsg' answeringMsg=[servicesmetamodel::Message|EString])?
-		//'}'
-		public Group getGroup() { return cGroup; }
-		
-		//'Operation'
-		public Keyword getOperationKeyword_0() { return cOperationKeyword_0; }
-		
-		//name=EString
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('args' args=EJavaObject)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'args'
-		public Keyword getArgsKeyword_3_0() { return cArgsKeyword_3_0; }
-		
-		//args=EJavaObject
-		public Assignment getArgsAssignment_3_1() { return cArgsAssignment_3_1; }
-		
-		//EJavaObject
-		public RuleCall getArgsEJavaObjectParserRuleCall_3_1_0() { return cArgsEJavaObjectParserRuleCall_3_1_0; }
-		
-		//'sideEffect'
-		public Keyword getSideEffectKeyword_4() { return cSideEffectKeyword_4; }
-		
-		//sideEffect=EBoolean
-		public Assignment getSideEffectAssignment_5() { return cSideEffectAssignment_5; }
-		
-		//EBoolean
-		public RuleCall getSideEffectEBooleanParserRuleCall_5_0() { return cSideEffectEBooleanParserRuleCall_5_0; }
-		
-		//'invokingMsg'
-		public Keyword getInvokingMsgKeyword_6() { return cInvokingMsgKeyword_6; }
-		
-		//invokingMsg=[servicesmetamodel::Message|EString]
-		public Assignment getInvokingMsgAssignment_7() { return cInvokingMsgAssignment_7; }
-		
-		//[servicesmetamodel::Message|EString]
-		public CrossReference getInvokingMsgMessageCrossReference_7_0() { return cInvokingMsgMessageCrossReference_7_0; }
-		
-		//EString
-		public RuleCall getInvokingMsgMessageEStringParserRuleCall_7_0_1() { return cInvokingMsgMessageEStringParserRuleCall_7_0_1; }
-		
-		//('answeringMsg' answeringMsg=[servicesmetamodel::Message|EString])?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'answeringMsg'
-		public Keyword getAnsweringMsgKeyword_8_0() { return cAnsweringMsgKeyword_8_0; }
-		
-		//answeringMsg=[servicesmetamodel::Message|EString]
-		public Assignment getAnsweringMsgAssignment_8_1() { return cAnsweringMsgAssignment_8_1; }
-		
-		//[servicesmetamodel::Message|EString]
-		public CrossReference getAnsweringMsgMessageCrossReference_8_1_0() { return cAnsweringMsgMessageCrossReference_8_1_0; }
-		
-		//EString
-		public RuleCall getAnsweringMsgMessageEStringParserRuleCall_8_1_0_1() { return cAnsweringMsgMessageEStringParserRuleCall_8_1_0_1; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
-	}
-	public class EJavaObjectElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.EJavaObject");
-		private final Keyword cEJavaObjectKeyword = (Keyword)rule.eContents().get(1);
-		
-		//EJavaObject ecore::EJavaObject:
-		//	'EJavaObject' /* TODO: implement this rule and an appropriate IValueConverter */;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'EJavaObject'
-		public Keyword getEJavaObjectKeyword() { return cEJavaObjectKeyword; }
-	}
-	public class EBooleanElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.EBoolean");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		
-		//EBoolean ecore::EBoolean:
-		//	'true' | 'false';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'true' | 'false'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'true'
-		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
-		
-		//'false'
-		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
-	}
-	public class MessageElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.chor4integration.textdsl.Chor4IntTxtDsl.Message");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cMessageAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cMessageKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cContentKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cContentAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cContentEJavaObjectParserRuleCall_3_1_0 = (RuleCall)cContentAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//Message servicesmetamodel::Message:
-		//	{servicesmetamodel::Message}
-		//	'Message'
-		//	'{' ('content' content=EJavaObject)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{servicesmetamodel::Message} 'Message' '{' ('content' content=EJavaObject)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{servicesmetamodel::Message}
-		public Action getMessageAction_0() { return cMessageAction_0; }
-		
-		//'Message'
-		public Keyword getMessageKeyword_1() { return cMessageKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('content' content=EJavaObject)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'content'
-		public Keyword getContentKeyword_3_0() { return cContentKeyword_3_0; }
-		
-		//content=EJavaObject
-		public Assignment getContentAssignment_3_1() { return cContentAssignment_3_1; }
-		
-		//EJavaObject
-		public RuleCall getContentEJavaObjectParserRuleCall_3_1_0() { return cContentEJavaObjectParserRuleCall_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
 	
 	
 	private final ChoreographyElements pChoreography;
 	private final FlowElementElements pFlowElement;
-	private final FlowNodeElements pFlowNode;
 	private final ActorElements pActor;
+	private final FlowNodeElements pFlowNode;
+	private final RoleElements pRole;
 	private final EStringElements pEString;
 	private final SequenceFlowElements pSequenceFlow;
 	private final ExclusiveGatewayElements pExclusiveGateway;
@@ -1370,13 +1463,13 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final StartEventElements pStartEvent;
 	private final EndEventElements pEndEvent;
 	private final AtomicInteractionElements pAtomicInteraction;
-	private final RoleElements pRole;
-	private final ServiceElements pService;
-	private final UserElements pUser;
 	private final OperationElements pOperation;
-	private final EJavaObjectElements pEJavaObject;
 	private final EBooleanElements pEBoolean;
 	private final MessageElements pMessage;
+	private final ParameterElements pParameter;
+	private final EJavaObjectElements pEJavaObject;
+	private final ServiceElements pService;
+	private final UserElements pUser;
 	
 	private final Grammar grammar;
 	
@@ -1389,8 +1482,9 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pChoreography = new ChoreographyElements();
 		this.pFlowElement = new FlowElementElements();
-		this.pFlowNode = new FlowNodeElements();
 		this.pActor = new ActorElements();
+		this.pFlowNode = new FlowNodeElements();
+		this.pRole = new RoleElements();
 		this.pEString = new EStringElements();
 		this.pSequenceFlow = new SequenceFlowElements();
 		this.pExclusiveGateway = new ExclusiveGatewayElements();
@@ -1398,13 +1492,13 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStartEvent = new StartEventElements();
 		this.pEndEvent = new EndEventElements();
 		this.pAtomicInteraction = new AtomicInteractionElements();
-		this.pRole = new RoleElements();
-		this.pService = new ServiceElements();
-		this.pUser = new UserElements();
 		this.pOperation = new OperationElements();
-		this.pEJavaObject = new EJavaObjectElements();
 		this.pEBoolean = new EBooleanElements();
 		this.pMessage = new MessageElements();
+		this.pParameter = new ParameterElements();
+		this.pEJavaObject = new EJavaObjectElements();
+		this.pService = new ServiceElements();
+		this.pUser = new UserElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1437,7 +1531,8 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Choreography:
 	//	{Choreography}
 	//	'Choreography'
-	//	'{' ('flowElements' '{' flowElements+=FlowElement ("," flowElements+=FlowElement)* '}')?
+	//	'{' ('flowElements' '{' flowElements+=FlowElement ("," flowElements+=FlowElement)* '}')? ('roles' '{' roles+=Role
+	//	("," roles+=Role)* '}')?
 	//	'}';
 	public ChoreographyElements getChoreographyAccess() {
 		return pChoreography;
@@ -1457,6 +1552,16 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getFlowElementAccess().getRule();
 	}
 	
+	//Actor servicesmetamodel::Actor:
+	//	Service | User;
+	public ActorElements getActorAccess() {
+		return pActor;
+	}
+	
+	public ParserRule getActorRule() {
+		return getActorAccess().getRule();
+	}
+	
 	//FlowNode:
 	//	ExclusiveGateway | ParallelGateway | StartEvent | EndEvent | AtomicInteraction;
 	public FlowNodeElements getFlowNodeAccess() {
@@ -1467,14 +1572,18 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getFlowNodeAccess().getRule();
 	}
 	
-	//Actor servicesmetamodel::Actor:
-	//	Service | User;
-	public ActorElements getActorAccess() {
-		return pActor;
+	//Role:
+	//	{Role}
+	//	'Role'
+	//	name=EString
+	//	'{' ('actor' actor=[servicesmetamodel::Actor|EString])?
+	//	'}';
+	public RoleElements getRoleAccess() {
+		return pRole;
 	}
 	
-	public ParserRule getActorRule() {
-		return getActorAccess().getRule();
+	public ParserRule getRoleRule() {
+		return getRoleAccess().getRule();
 	}
 	
 	//EString:
@@ -1567,9 +1676,8 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=EString
 	//	'{' ('incomings' '(' incomings+=[SequenceFlow|EString] ("," incomings+=[SequenceFlow|EString])* ')')? ('outgoings'
 	//	'(' outgoings+=[SequenceFlow|EString] ("," outgoings+=[SequenceFlow|EString])* ')')?
-	//	'sender' sender=[servicesmetamodel::Role|EString]
-	//	'receiver' receiver=[servicesmetamodel::Role|EString] ('targetOperation'
-	//	targetOperation=[servicesmetamodel::Operation|EString])?
+	//	'sender' sender=[Role|EString]
+	//	'receiver' receiver=[Role|EString] ('targetOperation' targetOperation=[servicesmetamodel::Operation|EString])?
 	//	'}';
 	public AtomicInteractionElements getAtomicInteractionAccess() {
 		return pAtomicInteraction;
@@ -1579,18 +1687,66 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getAtomicInteractionAccess().getRule();
 	}
 	
-	//Role servicesmetamodel::Role:
-	//	{servicesmetamodel::Role}
-	//	'Role'
+	//Operation servicesmetamodel::Operation:
+	//	'Operation'
 	//	name=EString
-	//	'{' ('implementation' implementation=[servicesmetamodel::Actor|EString])?
+	//	'{'
+	//	'sideEffect' sideEffect=EBoolean
+	//	'invokingMsg' invokingMsg=[servicesmetamodel::Message|EString] ('answeringMsg'
+	//	answeringMsg=[servicesmetamodel::Message|EString])?
 	//	'}';
-	public RoleElements getRoleAccess() {
-		return pRole;
+	public OperationElements getOperationAccess() {
+		return pOperation;
 	}
 	
-	public ParserRule getRoleRule() {
-		return getRoleAccess().getRule();
+	public ParserRule getOperationRule() {
+		return getOperationAccess().getRule();
+	}
+	
+	//EBoolean ecore::EBoolean:
+	//	'true' | 'false';
+	public EBooleanElements getEBooleanAccess() {
+		return pEBoolean;
+	}
+	
+	public ParserRule getEBooleanRule() {
+		return getEBooleanAccess().getRule();
+	}
+	
+	//Message servicesmetamodel::Message:
+	//	{servicesmetamodel::Message}
+	//	'Message'
+	//	'{' ('parameter' '{' parameter+=Parameter ("," parameter+=Parameter)* '}')?
+	//	'}';
+	public MessageElements getMessageAccess() {
+		return pMessage;
+	}
+	
+	public ParserRule getMessageRule() {
+		return getMessageAccess().getRule();
+	}
+	
+	//Parameter servicesmetamodel::Parameter:
+	//	{servicesmetamodel::Parameter}
+	//	'Parameter'
+	//	'{' ('type' type=EJavaObject)?
+	//	'}';
+	public ParameterElements getParameterAccess() {
+		return pParameter;
+	}
+	
+	public ParserRule getParameterRule() {
+		return getParameterAccess().getRule();
+	}
+	
+	//EJavaObject ecore::EJavaObject:
+	//	'EJavaObject' /* TODO: implement this rule and an appropriate IValueConverter */;
+	public EJavaObjectElements getEJavaObjectAccess() {
+		return pEJavaObject;
+	}
+	
+	public ParserRule getEJavaObjectRule() {
+		return getEJavaObjectAccess().getRule();
 	}
 	
 	//Service servicesmetamodel::Service:
@@ -1617,55 +1773,6 @@ public class Chor4IntTxtDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getUserRule() {
 		return getUserAccess().getRule();
-	}
-	
-	//Operation servicesmetamodel::Operation:
-	//	'Operation'
-	//	name=EString
-	//	'{' ('args' args=EJavaObject)?
-	//	'sideEffect' sideEffect=EBoolean
-	//	'invokingMsg' invokingMsg=[servicesmetamodel::Message|EString] ('answeringMsg'
-	//	answeringMsg=[servicesmetamodel::Message|EString])?
-	//	'}';
-	public OperationElements getOperationAccess() {
-		return pOperation;
-	}
-	
-	public ParserRule getOperationRule() {
-		return getOperationAccess().getRule();
-	}
-	
-	//EJavaObject ecore::EJavaObject:
-	//	'EJavaObject' /* TODO: implement this rule and an appropriate IValueConverter */;
-	public EJavaObjectElements getEJavaObjectAccess() {
-		return pEJavaObject;
-	}
-	
-	public ParserRule getEJavaObjectRule() {
-		return getEJavaObjectAccess().getRule();
-	}
-	
-	//EBoolean ecore::EBoolean:
-	//	'true' | 'false';
-	public EBooleanElements getEBooleanAccess() {
-		return pEBoolean;
-	}
-	
-	public ParserRule getEBooleanRule() {
-		return getEBooleanAccess().getRule();
-	}
-	
-	//Message servicesmetamodel::Message:
-	//	{servicesmetamodel::Message}
-	//	'Message'
-	//	'{' ('content' content=EJavaObject)?
-	//	'}';
-	public MessageElements getMessageAccess() {
-		return pMessage;
-	}
-	
-	public ParserRule getMessageRule() {
-		return getMessageAccess().getRule();
 	}
 	
 	//terminal ID:

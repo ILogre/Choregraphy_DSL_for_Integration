@@ -2,8 +2,6 @@
  */
 package com.chor4integration.chor4int;
 
-import com.chor4integration.servicesmetamodel.Role;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Interaction</b></em>'.

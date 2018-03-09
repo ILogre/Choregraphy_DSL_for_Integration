@@ -3,14 +3,18 @@
 package com.chor4integration.servicesmetamodel.impl;
 
 import com.chor4integration.servicesmetamodel.Message;
+import com.chor4integration.servicesmetamodel.Parameter;
 import com.chor4integration.servicesmetamodel.ServicesmetamodelPackage;
 
-import org.eclipse.emf.common.notify.Notification;
-
+import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,31 +24,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.chor4integration.servicesmetamodel.impl.MessageImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link com.chor4integration.servicesmetamodel.impl.MessageImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MessageImpl extends MinimalEObjectImpl.Container implements Message {
 	/**
-	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
+	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContent()
+	 * @see #getParameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object CONTENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected Object content = CONTENT_EDEFAULT;
+	protected EList<Parameter> parameter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +64,12 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getContent() {
-		return content;
+	public EList<Parameter> getParameter() {
+		if (parameter == null) {
+			parameter = new EObjectContainmentEList<Parameter>(Parameter.class, this,
+					ServicesmetamodelPackage.MESSAGE__PARAMETER);
+		}
+		return parameter;
 	}
 
 	/**
@@ -79,12 +77,13 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContent(Object newContent) {
-		Object oldContent = content;
-		content = newContent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicesmetamodelPackage.MESSAGE__CONTENT, oldContent,
-					content));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ServicesmetamodelPackage.MESSAGE__PARAMETER:
+			return ((InternalEList<?>) getParameter()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -95,8 +94,8 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.MESSAGE__CONTENT:
-			return getContent();
+		case ServicesmetamodelPackage.MESSAGE__PARAMETER:
+			return getParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,11 +105,13 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.MESSAGE__CONTENT:
-			setContent(newValue);
+		case ServicesmetamodelPackage.MESSAGE__PARAMETER:
+			getParameter().clear();
+			getParameter().addAll((Collection<? extends Parameter>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,8 +125,8 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.MESSAGE__CONTENT:
-			setContent(CONTENT_EDEFAULT);
+		case ServicesmetamodelPackage.MESSAGE__PARAMETER:
+			getParameter().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -139,27 +140,10 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ServicesmetamodelPackage.MESSAGE__CONTENT:
-			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+		case ServicesmetamodelPackage.MESSAGE__PARAMETER:
+			return parameter != null && !parameter.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (content: ");
-		result.append(content);
-		result.append(')');
-		return result.toString();
 	}
 
 } //MessageImpl

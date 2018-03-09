@@ -4,6 +4,7 @@ package com.chor4integration.chor4int.impl;
 
 import com.chor4integration.chor4int.AtomicInteraction;
 import com.chor4integration.chor4int.Chor4intPackage;
+
 import com.chor4integration.servicesmetamodel.Operation;
 
 import org.eclipse.emf.common.notify.Notification;

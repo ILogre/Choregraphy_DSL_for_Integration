@@ -4,8 +4,7 @@ package com.chor4integration.chor4int.impl;
 
 import com.chor4integration.chor4int.Chor4intPackage;
 import com.chor4integration.chor4int.Interaction;
-
-import com.chor4integration.servicesmetamodel.Role;
+import com.chor4integration.chor4int.Role;
 
 import org.eclipse.emf.common.notify.Notification;
 

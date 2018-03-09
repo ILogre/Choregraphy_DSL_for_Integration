@@ -56,8 +56,6 @@ public class ServicesmetamodelFactoryImpl extends EFactoryImpl implements Servic
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case ServicesmetamodelPackage.ROLE:
-			return createRole();
 		case ServicesmetamodelPackage.SERVICE:
 			return createService();
 		case ServicesmetamodelPackage.STRUCTURAL_VIEW:
@@ -68,19 +66,11 @@ public class ServicesmetamodelFactoryImpl extends EFactoryImpl implements Servic
 			return createMessage();
 		case ServicesmetamodelPackage.USER:
 			return createUser();
+		case ServicesmetamodelPackage.PARAMETER:
+			return createParameter();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role createRole() {
-		RoleImpl role = new RoleImpl();
-		return role;
 	}
 
 	/**
@@ -131,6 +121,16 @@ public class ServicesmetamodelFactoryImpl extends EFactoryImpl implements Servic
 	public User createUser() {
 		UserImpl user = new UserImpl();
 		return user;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
 	}
 
 	/**

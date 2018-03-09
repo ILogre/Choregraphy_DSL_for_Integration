@@ -54,7 +54,6 @@ public class OperationItemProvider extends ItemProviderAdapter implements IEditi
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addArgsPropertyDescriptor(object);
 			addSideEffectPropertyDescriptor(object);
 			addInvokingMsgPropertyDescriptor(object);
 			addAnsweringMsgPropertyDescriptor(object);
@@ -75,22 +74,6 @@ public class OperationItemProvider extends ItemProviderAdapter implements IEditi
 						getString("_UI_PropertyDescriptor_description", "_UI_Operation_name_feature",
 								"_UI_Operation_type"),
 						ServicesmetamodelPackage.Literals.OPERATION__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Args feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addArgsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Operation_args_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Operation_args_feature",
-								"_UI_Operation_type"),
-						ServicesmetamodelPackage.Literals.OPERATION__ARGS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -189,7 +172,6 @@ public class OperationItemProvider extends ItemProviderAdapter implements IEditi
 
 		switch (notification.getFeatureID(Operation.class)) {
 		case ServicesmetamodelPackage.OPERATION__NAME:
-		case ServicesmetamodelPackage.OPERATION__ARGS:
 		case ServicesmetamodelPackage.OPERATION__SIDE_EFFECT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
